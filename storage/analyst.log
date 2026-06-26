@@ -1,0 +1,1456 @@
+
+=== Starting Layer 1 Ingestion Pipeline Smoke Test ===
+
+----------------------------------------
+getting URL: http://export.arxiv.org/api/query ...
+got response with status code: 200
+successfully fetched URL: http://export.arxiv.org/api/query
+----------------------------------------
+
+=== Fetched & merged 5 unique papers from arxiv ===
+
+arxiv:2606.20560v1 - How Transparent is DiffusionGemma?
+  LLM reasoning transparency is a critical affordance for understanding model decisions, mitigating mi ...
+
+arxiv:2606.20554v1 - Structuring and Tokenizing Distributed User Interest Context for Generative Recommendation
+  Generative recommendation is an emerging paradigm that has shown promise in industrial recommendatio ...
+
+arxiv:2606.20544v1 - Toward Calibrated Mixture-of-Experts Under Distribution Shift
+  Calibration aligns a model's predictive uncertainty with the frequencies of its empirical outcomes a ...
+
+arxiv:2606.20532v1 - How Do Instructions Shape Speech? Cross-Attention Attribution for Style-Captioned Text-to-Speech
+  Style-captioned text-to-speech systems use natural language to control voice characteristics, but ho ...
+
+arxiv:2606.20529v1 - LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents
+  Policy-adherent tool-calling agents in customer-service domains must maintain task states across tur ...
+
+=== Ingesting 2 papers (PDF download + GROBID extraction + metadata store) ===
+----------------------------------------
+ingesting paper: arxiv:2606.20560v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20560v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmp75i3dfhr.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmp75i3dfhr.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20560v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmp75i3dfhr.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20560v1
+successfully stored metadata for paper: arxiv:2606.20560v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20560v1
+----------------------------------------
+  ingested arxiv:2606.20560v1: metadata only (no PDF / GROBID unavailable)
+----------------------------------------
+ingesting paper: arxiv:2606.20554v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20554v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpmrk2oyht.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpmrk2oyht.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20554v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpmrk2oyht.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20554v1
+successfully stored metadata for paper: arxiv:2606.20554v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20554v1
+----------------------------------------
+  ingested arxiv:2606.20554v1: metadata only (no PDF / GROBID unavailable)
+
+Done. Metadata appended to ./storage/metadata.jsonl
+
+=== Layer 1 Ingestion Pipeline Smoke Test Complete ===
+
+
+=== Starting Layer 2 Knowledge Extraction Pipeline ===
+
+(skipping 7 already-extracted paper(s); delete their lines from ./storage\extracted.jsonl to redo)
+=== Extracting 2 paper(s) with Qwen/Qwen2.5-72B-Instruct ===
+  extracted arxiv:2606.20554v1: 9 units (4 claims, 1 methods, 1 datasets, 0 results, 2 assumptions, 1 limitations) [abstract_only]
+  extracted arxiv:2606.20560v1: 14 units (6 claims, 3 methods, 0 datasets, 2 results, 2 assumptions, 1 limitations) [abstract_only]
+
+Done: 2 extracted, 0 failed/skipped. Results appended to ./storage\extracted.jsonl
+
+=== Layer 2 Knowledge Extraction Pipeline Complete ===
+
+=== Indexing 25 new chunks from 9 paper(s) with voyage-3 ===
+  abstract    2
+  assumption  4
+  claim       10
+  dataset     1
+  limitation  2
+  method      4
+  result      2
+
+Done: store now holds 110 chunks (voyage-3, dim=1024) in ./storage\vectors.npy + ./storage\chunks.jsonl
+
+=== Layer 3-2 build complete ===
+papers (metadata):   9
+papers with units:   9
+papers without units:0  (no Layer 2 extraction yet -> Paper/Author/CITES only)
+citation stub papers:94  (cited ids not in the corpus)
+entity resolution:   normalization + alias table (no semantic merge)
+
+nodes by type:
+  Author        63
+  Claim         35
+  Dataset       10
+  Method        16
+  Paper         9
+  Paper(stub)   94
+edges by type:
+  ABOUT         33
+  AUTHORED      63
+  CITES         94
+  EVALUATES_ON  10
+  INTRODUCES    12
+  MAKES_CLAIM   35
+  USES          4
+
+wrote ./storage\graph.json
+
+======================================================================
+== Layer 1 - data ingestion   ($ python -m layer1 --sources arxiv --ingest 2)
+======================================================================
+
+-- Layer 1 - data ingestion: ok (14.1s, exit 0)
+
+======================================================================
+== Layer 2 - knowledge extraction   ($ python -m layer2)
+======================================================================
+
+-- Layer 2 - knowledge extraction: ok (101.6s, exit 0)
+
+======================================================================
+== Layer 3-1 - embedding & index   ($ python -m layer3-1 index)
+======================================================================
+
+-- Layer 3-1 - embedding & index: ok (4.1s, exit 0)
+
+======================================================================
+== Layer 3-2 - knowledge graph   ($ python -m layer3-2 build)
+======================================================================
+
+-- Layer 3-2 - knowledge graph: ok (1.3s, exit 0)
+
+======================================================================
+== pipeline summary
+======================================================================
+  [OK  ] L1 ingest: ok
+  [OK  ] L2 extract: ok
+  [OK  ] L3-1 index: ok
+  [OK  ] L3-2 graph: ok
+
+build steps complete.
+
+(--no-serve) Build done. Launch the console with:
+   python -m frontend --host 127.0.0.1 --port 8000
+
+=== Starting Layer 1 Ingestion Pipeline Smoke Test ===
+
+----------------------------------------
+getting URL: http://export.arxiv.org/api/query ...
+got response with status code: 200
+successfully fetched URL: http://export.arxiv.org/api/query
+----------------------------------------
+
+=== Fetched & merged 5 unique papers from arxiv ===
+
+arxiv:2606.20560v1 - How Transparent is DiffusionGemma?
+  LLM reasoning transparency is a critical affordance for understanding model decisions, mitigating mi ...
+
+arxiv:2606.20554v1 - Structuring and Tokenizing Distributed User Interest Context for Generative Recommendation
+  Generative recommendation is an emerging paradigm that has shown promise in industrial recommendatio ...
+
+arxiv:2606.20544v1 - Toward Calibrated Mixture-of-Experts Under Distribution Shift
+  Calibration aligns a model's predictive uncertainty with the frequencies of its empirical outcomes a ...
+
+arxiv:2606.20532v1 - How Do Instructions Shape Speech? Cross-Attention Attribution for Style-Captioned Text-to-Speech
+  Style-captioned text-to-speech systems use natural language to control voice characteristics, but ho ...
+
+arxiv:2606.20529v1 - LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents
+  Policy-adherent tool-calling agents in customer-service domains must maintain task states across tur ...
+
+=== Ingesting 2 papers (PDF download + GROBID extraction + metadata store) ===
+----------------------------------------
+ingesting paper: arxiv:2606.20560v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20560v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpei62ce1h.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpei62ce1h.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20560v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpei62ce1h.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20560v1
+successfully stored metadata for paper: arxiv:2606.20560v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20560v1
+----------------------------------------
+  ingested arxiv:2606.20560v1: metadata only (no PDF / GROBID unavailable)
+----------------------------------------
+ingesting paper: arxiv:2606.20554v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20554v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmp4c8r203c.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmp4c8r203c.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20554v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmp4c8r203c.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20554v1
+successfully stored metadata for paper: arxiv:2606.20554v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20554v1
+----------------------------------------
+  ingested arxiv:2606.20554v1: metadata only (no PDF / GROBID unavailable)
+
+Done. Metadata appended to ./storage/metadata.jsonl
+
+=== Layer 1 Ingestion Pipeline Smoke Test Complete ===
+
+
+=== Starting Layer 2 Knowledge Extraction Pipeline ===
+
+(skipping 9 already-extracted paper(s); delete their lines from ./storage\extracted.jsonl to redo)
+Nothing to extract.
+
+=== Layer 2 Knowledge Extraction Pipeline Complete ===
+
+Nothing new to index (110 chunks already in the store).
+
+=== Layer 3-2 build complete ===
+papers (metadata):   9
+papers with units:   9
+papers without units:0  (no Layer 2 extraction yet -> Paper/Author/CITES only)
+citation stub papers:94  (cited ids not in the corpus)
+entity resolution:   normalization + alias table (no semantic merge)
+
+nodes by type:
+  Author        63
+  Claim         35
+  Dataset       10
+  Method        16
+  Paper         9
+  Paper(stub)   94
+edges by type:
+  ABOUT         33
+  AUTHORED      63
+  CITES         94
+  EVALUATES_ON  10
+  INTRODUCES    12
+  MAKES_CLAIM   35
+  USES          4
+
+wrote ./storage\graph.json
+
+======================================================================
+== Layer 1 - data ingestion   ($ python -m layer1 --sources arxiv --ingest 2)
+======================================================================
+
+-- Layer 1 - data ingestion: ok (14.1s, exit 0)
+
+======================================================================
+== Layer 2 - knowledge extraction   ($ python -m layer2)
+======================================================================
+
+-- Layer 2 - knowledge extraction: ok (1.0s, exit 0)
+
+======================================================================
+== Layer 3-1 - embedding & index   ($ python -m layer3-1 index)
+======================================================================
+
+-- Layer 3-1 - embedding & index: ok (0.4s, exit 0)
+
+======================================================================
+== Layer 3-2 - knowledge graph   ($ python -m layer3-2 build)
+======================================================================
+
+-- Layer 3-2 - knowledge graph: ok (0.4s, exit 0)
+
+======================================================================
+== pipeline summary
+======================================================================
+  [OK  ] L1 ingest: ok
+  [OK  ] L2 extract: ok
+  [OK  ] L3-1 index: ok
+  [OK  ] L3-2 graph: ok
+
+build steps complete.
+
+(--no-serve) Build done. Launch the console with:
+   python -m frontend --host 127.0.0.1 --port 8000
+
+=== Starting Layer 1 Ingestion Pipeline Smoke Test ===
+
+----------------------------------------
+getting URL: http://export.arxiv.org/api/query ...
+got response with status code: 200
+successfully fetched URL: http://export.arxiv.org/api/query
+----------------------------------------
+
+=== Fetched & merged 5 unique papers from arxiv ===
+
+arxiv:2606.20560v1 - How Transparent is DiffusionGemma?
+  LLM reasoning transparency is a critical affordance for understanding model decisions, mitigating mi ...
+
+arxiv:2606.20554v1 - Structuring and Tokenizing Distributed User Interest Context for Generative Recommendation
+  Generative recommendation is an emerging paradigm that has shown promise in industrial recommendatio ...
+
+arxiv:2606.20544v1 - Toward Calibrated Mixture-of-Experts Under Distribution Shift
+  Calibration aligns a model's predictive uncertainty with the frequencies of its empirical outcomes a ...
+
+arxiv:2606.20532v1 - How Do Instructions Shape Speech? Cross-Attention Attribution for Style-Captioned Text-to-Speech
+  Style-captioned text-to-speech systems use natural language to control voice characteristics, but ho ...
+
+arxiv:2606.20529v1 - LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents
+  Policy-adherent tool-calling agents in customer-service domains must maintain task states across tur ...
+
+=== Ingesting 2 papers (PDF download + GROBID extraction + metadata store) ===
+----------------------------------------
+ingesting paper: arxiv:2606.20560v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20560v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpn5umz048.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpn5umz048.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20560v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpn5umz048.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20560v1
+successfully stored metadata for paper: arxiv:2606.20560v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20560v1
+----------------------------------------
+  ingested arxiv:2606.20560v1: metadata only (no PDF / GROBID unavailable)
+----------------------------------------
+ingesting paper: arxiv:2606.20554v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20554v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpvo6p8jol.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpvo6p8jol.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20554v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpvo6p8jol.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20554v1
+successfully stored metadata for paper: arxiv:2606.20554v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20554v1
+----------------------------------------
+  ingested arxiv:2606.20554v1: metadata only (no PDF / GROBID unavailable)
+
+Done. Metadata appended to ./storage/metadata.jsonl
+
+=== Layer 1 Ingestion Pipeline Smoke Test Complete ===
+
+
+=== Starting Layer 2 Knowledge Extraction Pipeline ===
+
+(skipping 11 already-extracted paper(s); delete their lines from ./storage\extracted.jsonl to redo)
+Nothing to extract.
+
+=== Layer 2 Knowledge Extraction Pipeline Complete ===
+
+=== Indexing 14 new chunks from 11 paper(s) with voyage-3 ===
+  abstract    1
+  assumption  2
+  claim       4
+  dataset     1
+  limitation  1
+  method      1
+  result      4
+
+Done: store now holds 134 chunks (voyage-3, dim=1024) in ./storage\vectors.npy + ./storage\chunks.jsonl
+
+=== Layer 3-2 build complete ===
+papers (metadata):   11
+papers with units:   11
+papers without units:0  (no Layer 2 extraction yet -> Paper/Author/CITES only)
+citation stub papers:94  (cited ids not in the corpus)
+entity resolution:   normalization + alias table (no semantic merge)
+
+nodes by type:
+  Author        75
+  Claim         42
+  Dataset       11
+  Method        18
+  Paper         11
+  Paper(stub)   94
+edges by type:
+  ABOUT         34
+  AUTHORED      75
+  CITES         94
+  EVALUATES_ON  11
+  INTRODUCES    14
+  MAKES_CLAIM   42
+  USES          4
+
+wrote ./storage\graph.json
+
+======================================================================
+== Layer 1 - data ingestion   ($ python -m layer1 --sources arxiv --ingest 2)
+======================================================================
+
+-- Layer 1 - data ingestion: ok (13.1s, exit 0)
+
+======================================================================
+== Layer 2 - knowledge extraction   ($ python -m layer2)
+======================================================================
+
+-- Layer 2 - knowledge extraction: ok (0.7s, exit 0)
+
+======================================================================
+== Layer 3-1 - embedding & index   ($ python -m layer3-1 index)
+======================================================================
+
+-- Layer 3-1 - embedding & index: ok (1.8s, exit 0)
+
+======================================================================
+== Layer 3-2 - knowledge graph   ($ python -m layer3-2 build)
+======================================================================
+
+-- Layer 3-2 - knowledge graph: ok (0.4s, exit 0)
+
+======================================================================
+== pipeline summary
+======================================================================
+  [OK  ] L1 ingest: ok
+  [OK  ] L2 extract: ok
+  [OK  ] L3-1 index: ok
+  [OK  ] L3-2 graph: ok
+
+build steps complete.
+
+(--no-serve) Build done. Launch the console with:
+   python -m frontend --host 127.0.0.1 --port 8000
+
+=== Starting Layer 1 Ingestion Pipeline Smoke Test ===
+
+----------------------------------------
+getting URL: http://export.arxiv.org/api/query ...
+got response with status code: 200
+successfully fetched URL: http://export.arxiv.org/api/query
+----------------------------------------
+
+=== Fetched & merged 5 unique papers from arxiv ===
+
+arxiv:2606.20560v1 - How Transparent is DiffusionGemma?
+  LLM reasoning transparency is a critical affordance for understanding model decisions, mitigating mi ...
+
+arxiv:2606.20554v1 - Structuring and Tokenizing Distributed User Interest Context for Generative Recommendation
+  Generative recommendation is an emerging paradigm that has shown promise in industrial recommendatio ...
+
+arxiv:2606.20544v1 - Toward Calibrated Mixture-of-Experts Under Distribution Shift
+  Calibration aligns a model's predictive uncertainty with the frequencies of its empirical outcomes a ...
+
+arxiv:2606.20532v1 - How Do Instructions Shape Speech? Cross-Attention Attribution for Style-Captioned Text-to-Speech
+  Style-captioned text-to-speech systems use natural language to control voice characteristics, but ho ...
+
+arxiv:2606.20529v1 - LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents
+  Policy-adherent tool-calling agents in customer-service domains must maintain task states across tur ...
+
+=== Ingesting 2 papers (PDF download + GROBID extraction + metadata store) ===
+----------------------------------------
+ingesting paper: arxiv:2606.20560v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20560v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpucixu6tq.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpucixu6tq.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20560v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpucixu6tq.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20560v1
+successfully stored metadata for paper: arxiv:2606.20560v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20560v1
+----------------------------------------
+  ingested arxiv:2606.20560v1: metadata only (no PDF / GROBID unavailable)
+----------------------------------------
+ingesting paper: arxiv:2606.20554v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20554v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmp37rkfw75.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmp37rkfw75.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20554v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmp37rkfw75.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20554v1
+successfully stored metadata for paper: arxiv:2606.20554v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20554v1
+----------------------------------------
+  ingested arxiv:2606.20554v1: metadata only (no PDF / GROBID unavailable)
+
+Done. Metadata appended to ./storage/metadata.jsonl
+
+=== Layer 1 Ingestion Pipeline Smoke Test Complete ===
+
+
+=== Starting Layer 2 Knowledge Extraction Pipeline ===
+
+(skipping 11 already-extracted paper(s); delete their lines from ./storage\extracted.jsonl to redo)
+Nothing to extract.
+
+=== Layer 2 Knowledge Extraction Pipeline Complete ===
+
+Nothing new to index (134 chunks already in the store).
+
+=== Layer 3-2 build complete ===
+papers (metadata):   11
+papers with units:   11
+papers without units:0  (no Layer 2 extraction yet -> Paper/Author/CITES only)
+citation stub papers:94  (cited ids not in the corpus)
+entity resolution:   normalization + alias table (no semantic merge)
+
+nodes by type:
+  Author        75
+  Claim         42
+  Dataset       11
+  Method        18
+  Paper         11
+  Paper(stub)   94
+edges by type:
+  ABOUT         34
+  AUTHORED      75
+  CITES         94
+  EVALUATES_ON  11
+  INTRODUCES    14
+  MAKES_CLAIM   42
+  USES          4
+
+wrote ./storage\graph.json
+
+======================================================================
+== Layer 1 - data ingestion   ($ python -m layer1 --sources arxiv --ingest 2)
+======================================================================
+
+-- Layer 1 - data ingestion: ok (13.5s, exit 0)
+
+======================================================================
+== Layer 2 - knowledge extraction   ($ python -m layer2)
+======================================================================
+
+-- Layer 2 - knowledge extraction: ok (0.8s, exit 0)
+
+======================================================================
+== Layer 3-1 - embedding & index   ($ python -m layer3-1 index)
+======================================================================
+
+-- Layer 3-1 - embedding & index: ok (0.3s, exit 0)
+
+======================================================================
+== Layer 3-2 - knowledge graph   ($ python -m layer3-2 build)
+======================================================================
+
+-- Layer 3-2 - knowledge graph: ok (0.3s, exit 0)
+
+======================================================================
+== pipeline summary
+======================================================================
+  [OK  ] L1 ingest: ok
+  [OK  ] L2 extract: ok
+  [OK  ] L3-1 index: ok
+  [OK  ] L3-2 graph: ok
+
+build steps complete.
+
+(--no-serve) Build done. Launch the console with:
+   python -m frontend --host 127.0.0.1 --port 8000
+
+=== Starting Layer 1 Ingestion Pipeline Smoke Test ===
+
+----------------------------------------
+getting URL: http://export.arxiv.org/api/query ...
+got response with status code: 200
+successfully fetched URL: http://export.arxiv.org/api/query
+----------------------------------------
+
+=== Fetched & merged 5 unique papers from arxiv ===
+
+arxiv:2606.20560v1 - How Transparent is DiffusionGemma?
+  LLM reasoning transparency is a critical affordance for understanding model decisions, mitigating mi ...
+
+arxiv:2606.20554v1 - Structuring and Tokenizing Distributed User Interest Context for Generative Recommendation
+  Generative recommendation is an emerging paradigm that has shown promise in industrial recommendatio ...
+
+arxiv:2606.20544v1 - Toward Calibrated Mixture-of-Experts Under Distribution Shift
+  Calibration aligns a model's predictive uncertainty with the frequencies of its empirical outcomes a ...
+
+arxiv:2606.20532v1 - How Do Instructions Shape Speech? Cross-Attention Attribution for Style-Captioned Text-to-Speech
+  Style-captioned text-to-speech systems use natural language to control voice characteristics, but ho ...
+
+arxiv:2606.20529v1 - LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents
+  Policy-adherent tool-calling agents in customer-service domains must maintain task states across tur ...
+
+=== Ingesting 2 papers (PDF download + GROBID extraction + metadata store) ===
+----------------------------------------
+ingesting paper: arxiv:2606.20560v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20560v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpvhfu80jn.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpvhfu80jn.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20560v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpvhfu80jn.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20560v1
+successfully stored metadata for paper: arxiv:2606.20560v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20560v1
+----------------------------------------
+  ingested arxiv:2606.20560v1: metadata only (no PDF / GROBID unavailable)
+----------------------------------------
+ingesting paper: arxiv:2606.20554v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20554v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpdk86gpdu.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpdk86gpdu.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20554v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpdk86gpdu.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20554v1
+successfully stored metadata for paper: arxiv:2606.20554v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20554v1
+----------------------------------------
+  ingested arxiv:2606.20554v1: metadata only (no PDF / GROBID unavailable)
+
+Done. Metadata appended to ./storage/metadata.jsonl
+
+=== Layer 1 Ingestion Pipeline Smoke Test Complete ===
+
+
+=== Starting Layer 2 Knowledge Extraction Pipeline ===
+
+(skipping 11 already-extracted paper(s); delete their lines from ./storage\extracted.jsonl to redo)
+Nothing to extract.
+
+=== Layer 2 Knowledge Extraction Pipeline Complete ===
+
+Nothing new to index (134 chunks already in the store).
+
+=== Layer 3-2 build complete ===
+papers (metadata):   11
+papers with units:   11
+papers without units:0  (no Layer 2 extraction yet -> Paper/Author/CITES only)
+citation stub papers:94  (cited ids not in the corpus)
+entity resolution:   normalization + alias table (no semantic merge)
+
+nodes by type:
+  Author        75
+  Claim         42
+  Dataset       11
+  Method        18
+  Paper         11
+  Paper(stub)   94
+edges by type:
+  ABOUT         34
+  AUTHORED      75
+  CITES         94
+  EVALUATES_ON  11
+  INTRODUCES    14
+  MAKES_CLAIM   42
+  USES          4
+
+wrote ./storage\graph.json
+
+======================================================================
+== Layer 1 - data ingestion   ($ python -m layer1 --sources arxiv --ingest 2)
+======================================================================
+
+-- Layer 1 - data ingestion: ok (13.2s, exit 0)
+
+======================================================================
+== Layer 2 - knowledge extraction   ($ python -m layer2)
+======================================================================
+
+-- Layer 2 - knowledge extraction: ok (0.6s, exit 0)
+
+======================================================================
+== Layer 3-1 - embedding & index   ($ python -m layer3-1 index)
+======================================================================
+
+-- Layer 3-1 - embedding & index: ok (0.4s, exit 0)
+
+======================================================================
+== Layer 3-2 - knowledge graph   ($ python -m layer3-2 build)
+======================================================================
+
+-- Layer 3-2 - knowledge graph: ok (0.4s, exit 0)
+
+======================================================================
+== pipeline summary
+======================================================================
+  [OK  ] L1 ingest: ok
+  [OK  ] L2 extract: ok
+  [OK  ] L3-1 index: ok
+  [OK  ] L3-2 graph: ok
+
+build steps complete.
+
+(--no-serve) Build done. Launch the console with:
+   python -m frontend --host 127.0.0.1 --port 8000
+
+=== Starting Layer 1 Ingestion Pipeline Smoke Test ===
+
+----------------------------------------
+getting URL: http://export.arxiv.org/api/query ...
+got response with status code: 200
+successfully fetched URL: http://export.arxiv.org/api/query
+----------------------------------------
+
+=== Fetched & merged 5 unique papers from arxiv ===
+
+arxiv:2606.20560v1 - How Transparent is DiffusionGemma?
+  LLM reasoning transparency is a critical affordance for understanding model decisions, mitigating mi ...
+
+arxiv:2606.20554v1 - Structuring and Tokenizing Distributed User Interest Context for Generative Recommendation
+  Generative recommendation is an emerging paradigm that has shown promise in industrial recommendatio ...
+
+arxiv:2606.20544v1 - Toward Calibrated Mixture-of-Experts Under Distribution Shift
+  Calibration aligns a model's predictive uncertainty with the frequencies of its empirical outcomes a ...
+
+arxiv:2606.20532v1 - How Do Instructions Shape Speech? Cross-Attention Attribution for Style-Captioned Text-to-Speech
+  Style-captioned text-to-speech systems use natural language to control voice characteristics, but ho ...
+
+arxiv:2606.20529v1 - LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents
+  Policy-adherent tool-calling agents in customer-service domains must maintain task states across tur ...
+
+=== Ingesting 2 papers (PDF download + GROBID extraction + metadata store) ===
+----------------------------------------
+ingesting paper: arxiv:2606.20560v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20560v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpd2ha3c0g.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpd2ha3c0g.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20560v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpd2ha3c0g.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20560v1
+successfully stored metadata for paper: arxiv:2606.20560v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20560v1
+----------------------------------------
+  ingested arxiv:2606.20560v1: metadata only (no PDF / GROBID unavailable)
+----------------------------------------
+ingesting paper: arxiv:2606.20554v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20554v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpj1_8yy_l.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpj1_8yy_l.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20554v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpj1_8yy_l.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20554v1
+successfully stored metadata for paper: arxiv:2606.20554v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20554v1
+----------------------------------------
+  ingested arxiv:2606.20554v1: metadata only (no PDF / GROBID unavailable)
+
+Done. Metadata appended to ./storage/metadata.jsonl
+
+=== Layer 1 Ingestion Pipeline Smoke Test Complete ===
+
+
+=== Starting Layer 2 Knowledge Extraction Pipeline ===
+
+(skipping 11 already-extracted paper(s); delete their lines from ./storage\extracted.jsonl to redo)
+Nothing to extract.
+
+=== Layer 2 Knowledge Extraction Pipeline Complete ===
+
+Nothing new to index (134 chunks already in the store).
+
+=== Layer 3-2 build complete ===
+papers (metadata):   11
+papers with units:   11
+papers without units:0  (no Layer 2 extraction yet -> Paper/Author/CITES only)
+citation stub papers:94  (cited ids not in the corpus)
+entity resolution:   normalization + alias table (no semantic merge)
+
+nodes by type:
+  Author        75
+  Claim         42
+  Dataset       11
+  Method        18
+  Paper         11
+  Paper(stub)   94
+edges by type:
+  ABOUT         34
+  AUTHORED      75
+  CITES         94
+  EVALUATES_ON  11
+  INTRODUCES    14
+  MAKES_CLAIM   42
+  USES          4
+
+wrote ./storage\graph.json
+
+======================================================================
+== Layer 1 - data ingestion   ($ python -m layer1 --sources arxiv --ingest 2)
+======================================================================
+
+-- Layer 1 - data ingestion: ok (13.6s, exit 0)
+
+======================================================================
+== Layer 2 - knowledge extraction   ($ python -m layer2)
+======================================================================
+
+-- Layer 2 - knowledge extraction: ok (0.6s, exit 0)
+
+======================================================================
+== Layer 3-1 - embedding & index   ($ python -m layer3-1 index)
+======================================================================
+
+-- Layer 3-1 - embedding & index: ok (0.3s, exit 0)
+
+======================================================================
+== Layer 3-2 - knowledge graph   ($ python -m layer3-2 build)
+======================================================================
+
+-- Layer 3-2 - knowledge graph: ok (0.3s, exit 0)
+
+======================================================================
+== pipeline summary
+======================================================================
+  [OK  ] L1 ingest: ok
+  [OK  ] L2 extract: ok
+  [OK  ] L3-1 index: ok
+  [OK  ] L3-2 graph: ok
+
+build steps complete.
+
+(--no-serve) Build done. Launch the console with:
+   python -m frontend --host 127.0.0.1 --port 8000
+
+=== Starting Layer 1 Ingestion Pipeline Smoke Test ===
+
+----------------------------------------
+getting URL: http://export.arxiv.org/api/query ...
+got response with status code: 200
+successfully fetched URL: http://export.arxiv.org/api/query
+----------------------------------------
+
+=== Fetched & merged 5 unique papers from arxiv ===
+
+arxiv:2606.20560v1 - How Transparent is DiffusionGemma?
+  LLM reasoning transparency is a critical affordance for understanding model decisions, mitigating mi ...
+
+arxiv:2606.20554v1 - Structuring and Tokenizing Distributed User Interest Context for Generative Recommendation
+  Generative recommendation is an emerging paradigm that has shown promise in industrial recommendatio ...
+
+arxiv:2606.20544v1 - Toward Calibrated Mixture-of-Experts Under Distribution Shift
+  Calibration aligns a model's predictive uncertainty with the frequencies of its empirical outcomes a ...
+
+arxiv:2606.20532v1 - How Do Instructions Shape Speech? Cross-Attention Attribution for Style-Captioned Text-to-Speech
+  Style-captioned text-to-speech systems use natural language to control voice characteristics, but ho ...
+
+arxiv:2606.20529v1 - LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents
+  Policy-adherent tool-calling agents in customer-service domains must maintain task states across tur ...
+
+=== Ingesting 2 papers (PDF download + GROBID extraction + metadata store) ===
+----------------------------------------
+ingesting paper: arxiv:2606.20560v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20560v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpwekxdipq.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpwekxdipq.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20560v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpwekxdipq.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20560v1
+successfully stored metadata for paper: arxiv:2606.20560v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20560v1
+----------------------------------------
+  ingested arxiv:2606.20560v1: metadata only (no PDF / GROBID unavailable)
+----------------------------------------
+ingesting paper: arxiv:2606.20554v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20554v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpxnmnn3e_.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpxnmnn3e_.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20554v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpxnmnn3e_.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20554v1
+successfully stored metadata for paper: arxiv:2606.20554v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20554v1
+----------------------------------------
+  ingested arxiv:2606.20554v1: metadata only (no PDF / GROBID unavailable)
+
+Done. Metadata appended to ./storage/metadata.jsonl
+
+=== Layer 1 Ingestion Pipeline Smoke Test Complete ===
+
+
+=== Starting Layer 2 Knowledge Extraction Pipeline ===
+
+(skipping 11 already-extracted paper(s); delete their lines from ./storage\extracted.jsonl to redo)
+Nothing to extract.
+
+=== Layer 2 Knowledge Extraction Pipeline Complete ===
+
+Nothing new to index (134 chunks already in the store).
+
+=== Layer 3-2 build complete ===
+papers (metadata):   11
+papers with units:   11
+papers without units:0  (no Layer 2 extraction yet -> Paper/Author/CITES only)
+citation stub papers:94  (cited ids not in the corpus)
+entity resolution:   normalization + alias table (no semantic merge)
+
+nodes by type:
+  Author        75
+  Claim         42
+  Dataset       11
+  Method        18
+  Paper         11
+  Paper(stub)   94
+edges by type:
+  ABOUT         34
+  AUTHORED      75
+  CITES         94
+  EVALUATES_ON  11
+  INTRODUCES    14
+  MAKES_CLAIM   42
+  USES          4
+
+wrote ./storage\graph.json
+
+======================================================================
+== Layer 1 - data ingestion   ($ python -m layer1 --sources arxiv --ingest 2)
+======================================================================
+
+-- Layer 1 - data ingestion: ok (13.4s, exit 0)
+
+======================================================================
+== Layer 2 - knowledge extraction   ($ python -m layer2)
+======================================================================
+
+-- Layer 2 - knowledge extraction: ok (0.6s, exit 0)
+
+======================================================================
+== Layer 3-1 - embedding & index   ($ python -m layer3-1 index)
+======================================================================
+
+-- Layer 3-1 - embedding & index: ok (0.3s, exit 0)
+
+======================================================================
+== Layer 3-2 - knowledge graph   ($ python -m layer3-2 build)
+======================================================================
+
+-- Layer 3-2 - knowledge graph: ok (0.3s, exit 0)
+
+======================================================================
+== pipeline summary
+======================================================================
+  [OK  ] L1 ingest: ok
+  [OK  ] L2 extract: ok
+  [OK  ] L3-1 index: ok
+  [OK  ] L3-2 graph: ok
+
+build steps complete.
+
+(--no-serve) Build done. Launch the console with:
+   python -m frontend --host 127.0.0.1 --port 8000
+
+=== Starting Layer 1 Ingestion Pipeline Smoke Test ===
+
+----------------------------------------
+getting URL: http://export.arxiv.org/api/query ...
+got response with status code: 200
+successfully fetched URL: http://export.arxiv.org/api/query
+----------------------------------------
+
+=== Fetched & merged 5 unique papers from arxiv ===
+
+arxiv:2606.20560v1 - How Transparent is DiffusionGemma?
+  LLM reasoning transparency is a critical affordance for understanding model decisions, mitigating mi ...
+
+arxiv:2606.20554v1 - Structuring and Tokenizing Distributed User Interest Context for Generative Recommendation
+  Generative recommendation is an emerging paradigm that has shown promise in industrial recommendatio ...
+
+arxiv:2606.20544v1 - Toward Calibrated Mixture-of-Experts Under Distribution Shift
+  Calibration aligns a model's predictive uncertainty with the frequencies of its empirical outcomes a ...
+
+arxiv:2606.20532v1 - How Do Instructions Shape Speech? Cross-Attention Attribution for Style-Captioned Text-to-Speech
+  Style-captioned text-to-speech systems use natural language to control voice characteristics, but ho ...
+
+arxiv:2606.20529v1 - LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents
+  Policy-adherent tool-calling agents in customer-service domains must maintain task states across tur ...
+
+=== Ingesting 2 papers (PDF download + GROBID extraction + metadata store) ===
+----------------------------------------
+ingesting paper: arxiv:2606.20560v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20560v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmplg_rzhak.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmplg_rzhak.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20560v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmplg_rzhak.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20560v1
+successfully stored metadata for paper: arxiv:2606.20560v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20560v1
+----------------------------------------
+  ingested arxiv:2606.20560v1: metadata only (no PDF / GROBID unavailable)
+----------------------------------------
+ingesting paper: arxiv:2606.20554v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20554v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmppr2v08m4.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmppr2v08m4.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20554v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmppr2v08m4.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20554v1
+successfully stored metadata for paper: arxiv:2606.20554v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20554v1
+----------------------------------------
+  ingested arxiv:2606.20554v1: metadata only (no PDF / GROBID unavailable)
+
+Done. Metadata appended to ./storage/metadata.jsonl
+
+=== Layer 1 Ingestion Pipeline Smoke Test Complete ===
+
+
+=== Starting Layer 2 Knowledge Extraction Pipeline ===
+
+(skipping 11 already-extracted paper(s); delete their lines from ./storage\extracted.jsonl to redo)
+Nothing to extract.
+
+=== Layer 2 Knowledge Extraction Pipeline Complete ===
+
+Nothing new to index (134 chunks already in the store).
+
+=== Layer 3-2 build complete ===
+papers (metadata):   11
+papers with units:   11
+papers without units:0  (no Layer 2 extraction yet -> Paper/Author/CITES only)
+citation stub papers:94  (cited ids not in the corpus)
+entity resolution:   normalization + alias table (no semantic merge)
+
+nodes by type:
+  Author        75
+  Claim         42
+  Dataset       11
+  Method        18
+  Paper         11
+  Paper(stub)   94
+edges by type:
+  ABOUT         34
+  AUTHORED      75
+  CITES         94
+  EVALUATES_ON  11
+  INTRODUCES    14
+  MAKES_CLAIM   42
+  USES          4
+
+wrote ./storage\graph.json
+
+======================================================================
+== Layer 1 - data ingestion   ($ python -m layer1 --sources arxiv --ingest 2)
+======================================================================
+
+-- Layer 1 - data ingestion: ok (13.4s, exit 0)
+
+======================================================================
+== Layer 2 - knowledge extraction   ($ python -m layer2)
+======================================================================
+
+-- Layer 2 - knowledge extraction: ok (0.7s, exit 0)
+
+======================================================================
+== Layer 3-1 - embedding & index   ($ python -m layer3-1 index)
+======================================================================
+
+-- Layer 3-1 - embedding & index: ok (0.3s, exit 0)
+
+======================================================================
+== Layer 3-2 - knowledge graph   ($ python -m layer3-2 build)
+======================================================================
+
+-- Layer 3-2 - knowledge graph: ok (0.3s, exit 0)
+
+======================================================================
+== pipeline summary
+======================================================================
+  [OK  ] L1 ingest: ok
+  [OK  ] L2 extract: ok
+  [OK  ] L3-1 index: ok
+  [OK  ] L3-2 graph: ok
+
+build steps complete.
+
+(--no-serve) Build done. Launch the console with:
+   python -m frontend --host 127.0.0.1 --port 8000
+
+=== Starting Layer 1 Ingestion Pipeline Smoke Test ===
+
+----------------------------------------
+getting URL: http://export.arxiv.org/api/query ...
+got response with status code: 200
+successfully fetched URL: http://export.arxiv.org/api/query
+----------------------------------------
+
+=== Fetched & merged 5 unique papers from arxiv ===
+
+arxiv:2606.20560v1 - How Transparent is DiffusionGemma?
+  LLM reasoning transparency is a critical affordance for understanding model decisions, mitigating mi ...
+
+arxiv:2606.20554v1 - Structuring and Tokenizing Distributed User Interest Context for Generative Recommendation
+  Generative recommendation is an emerging paradigm that has shown promise in industrial recommendatio ...
+
+arxiv:2606.20544v1 - Toward Calibrated Mixture-of-Experts Under Distribution Shift
+  Calibration aligns a model's predictive uncertainty with the frequencies of its empirical outcomes a ...
+
+arxiv:2606.20532v1 - How Do Instructions Shape Speech? Cross-Attention Attribution for Style-Captioned Text-to-Speech
+  Style-captioned text-to-speech systems use natural language to control voice characteristics, but ho ...
+
+arxiv:2606.20529v1 - LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents
+  Policy-adherent tool-calling agents in customer-service domains must maintain task states across tur ...
+
+=== Ingesting 2 papers (PDF download + GROBID extraction + metadata store) ===
+----------------------------------------
+ingesting paper: arxiv:2606.20560v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20560v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20560v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmp8ibbto7f.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmp8ibbto7f.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20560v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmp8ibbto7f.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20560v1
+successfully stored metadata for paper: arxiv:2606.20560v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20560v1
+----------------------------------------
+  ingested arxiv:2606.20560v1: metadata only (no PDF / GROBID unavailable)
+----------------------------------------
+ingesting paper: arxiv:2606.20554v1
+----------------------------------------
+storing PDF from URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+getting URL: https://arxiv.org/pdf/2606.20554v1 ...
+got response with status code: 200
+successfully fetched URL: https://arxiv.org/pdf/2606.20554v1
+----------------------------------------
+successfully stored PDF to path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpycv4rowh.pdf
+----------------------------------------
+----------------------------------------
+extracting text from PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpycv4rowh.pdf
+GROBID unreachable, skipping extraction: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+----------------------------------------
+ingested paper without TEI XML due to extraction failure: arxiv:2606.20554v1
+discarded PDF at path: C:\Users\pc\Desktop\code\ProjMnemosyne\storage\tmpycv4rowh.pdf
+----------------------------------------
+storing metadata for paper: arxiv:2606.20554v1
+successfully stored metadata for paper: arxiv:2606.20554v1
+----------------------------------------
+successfully ingested paper metadata: arxiv:2606.20554v1
+----------------------------------------
+  ingested arxiv:2606.20554v1: metadata only (no PDF / GROBID unavailable)
+
+Done. Metadata appended to ./storage/metadata.jsonl
+
+=== Layer 1 Ingestion Pipeline Smoke Test Complete ===
+
+
+=== Starting Layer 2 Knowledge Extraction Pipeline ===
+
+(skipping 11 already-extracted paper(s); delete their lines from ./storage\extracted.jsonl to redo)
+Nothing to extract.
+
+=== Layer 2 Knowledge Extraction Pipeline Complete ===
+
+Nothing new to index (134 chunks already in the store).
+
+=== Layer 3-2 build complete ===
+papers (metadata):   11
+papers with units:   11
+papers without units:0  (no Layer 2 extraction yet -> Paper/Author/CITES only)
+citation stub papers:94  (cited ids not in the corpus)
+entity resolution:   normalization + alias table (no semantic merge)
+
+nodes by type:
+  Author        75
+  Claim         42
+  Dataset       11
+  Method        18
+  Paper         11
+  Paper(stub)   94
+edges by type:
+  ABOUT         34
+  AUTHORED      75
+  CITES         94
+  EVALUATES_ON  11
+  INTRODUCES    14
+  MAKES_CLAIM   42
+  USES          4
+
+wrote ./storage\graph.json
+
+======================================================================
+== Layer 1 - data ingestion   ($ python -m layer1 --sources arxiv --ingest 2)
+======================================================================
+
+-- Layer 1 - data ingestion: ok (14.0s, exit 0)
+
+======================================================================
+== Layer 2 - knowledge extraction   ($ python -m layer2)
+======================================================================
+
+-- Layer 2 - knowledge extraction: ok (0.7s, exit 0)
+
+======================================================================
+== Layer 3-1 - embedding & index   ($ python -m layer3-1 index)
+======================================================================
+
+-- Layer 3-1 - embedding & index: ok (0.4s, exit 0)
+
+======================================================================
+== Layer 3-2 - knowledge graph   ($ python -m layer3-2 build)
+======================================================================
+
+-- Layer 3-2 - knowledge graph: ok (0.3s, exit 0)
+
+======================================================================
+=== Starting Layer 1 Ingestion Pipeline Smoke Test ===
+
+----------------------------------------
+getting URL: http://export.arxiv.org/api/query ...
+failed to GET URL after 3 attempts: http://export.arxiv.org/api/query
+----------------------------------------
+
+=== Fetched & merged 0 unique papers from arxiv ===
+
+=== Ingesting 0 papers (PDF download + GROBID extraction + metadata store) ===
+
+Done. Metadata appended to ./storage/metadata.jsonl
+
+=== Layer 1 Ingestion Pipeline Smoke Test Complete ===
+
+
+=== Starting Layer 2 Knowledge Extraction Pipeline ===
+
+(skipping 11 already-extracted paper(s); delete their lines from ./storage\extracted.jsonl to redo)
+Nothing to extract.
+
+=== Layer 2 Knowledge Extraction Pipeline Complete ===
+
+Nothing new to index (134 chunks already in the store).
+
+=== Layer 3-2 build complete ===
+papers (metadata):   11
+papers with units:   11
+papers without units:0  (no Layer 2 extraction yet -> Paper/Author/CITES only)
+citation stub papers:94  (cited ids not in the corpus)
+entity resolution:   normalization + alias table (no semantic merge)
+
+nodes by type:
+  Author        75
+  Claim         42
+  Dataset       11
+  Method        18
+  Paper         11
+  Paper(stub)   94
+edges by type:
+  ABOUT         34
+  AUTHORED      75
+  CITES         94
+  EVALUATES_ON  11
+  INTRODUCES    14
+  MAKES_CLAIM   42
+  USES          4
+
+wrote ./storage\graph.json
+
+======================================================================
+== Layer 1 - data ingestion   ($ python -m layer1 --sources arxiv --ingest 2)
+======================================================================
+
+-- Layer 1 - data ingestion: ok (15.1s, exit 0)
+
+======================================================================
+== Layer 2 - knowledge extraction   ($ python -m layer2)
+======================================================================
+
+-- Layer 2 - knowledge extraction: ok (2.1s, exit 0)
+
+======================================================================
+== Layer 3-1 - embedding & index   ($ python -m layer3-1 index)
+======================================================================
+
+-- Layer 3-1 - embedding & index: ok (1.0s, exit 0)
+
+======================================================================
+== Layer 3-2 - knowledge graph   ($ python -m layer3-2 build)
+======================================================================
+
+-- Layer 3-2 - knowledge graph: ok (1.2s, exit 0)
+
+======================================================================
+== pipeline summary
+======================================================================
+  [OK  ] L1 ingest: ok
+  [OK  ] L2 extract: ok
+  [OK  ] L3-1 index: ok
+  [OK  ] L3-2 graph: ok
+
+build steps complete.
+
+(--no-serve) Build done. Launch the console with:
+   python -m frontend --host 127.0.0.1 --port 8000

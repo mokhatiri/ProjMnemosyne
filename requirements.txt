@@ -1,0 +1,6 @@
+requests>=2.31.0
+huggingface_hub>=0.28.0
+numpy>=1.26.0
+networkx>=3.0
+mcp>=1.0          # Layer 4 only: serving the tools over the Model Context Protocol
+python-dotenv>=1.0  # load API tokens from a .env file at the project root

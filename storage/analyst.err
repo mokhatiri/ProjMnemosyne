@@ -1,0 +1,118 @@
+INFO:analyst.engine:growing corpus: ingesting 2 paper(s) via the pipeline
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+INFO:layer2.pipeline:loaded 9 unique papers, 7 already extracted
+INFO:layer2.extractor:extracting arxiv:2606.20560v1 (1 chunk, abstract only)
+INFO:layer2.extractor:extracting arxiv:2606.20554v1 (1 chunk, abstract only)
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://router.huggingface.co/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://router.huggingface.co/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:layer3-1.store:loaded vector store: 85 chunks (voyage-3)
+INFO:layer3-1.index:loaded 9 papers, 9 with extracted units
+INFO:layer3-1.embedder:embedding batch 1-25 of 25 (voyage-3)
+INFO:layer3-1.store:stored 25 new chunks (total 110)
+INFO:layer3-2.builder:loaded 9 papers, 9 with extracted units
+INFO:layer3-2.graph_store:wrote graph to ./storage\graph.json (227 nodes, 251 edges)
+INFO:layer3-2.graph_store:loaded graph from ./storage\graph.json (227 nodes, 251 edges)
+INFO:layer3-1.store:loaded vector store: 110 chunks (voyage-3)
+INFO:layer3-1.search:retrieval ready: 110 chunks, querying with voyage-3
+INFO:layer3-1.embedder:embedding batch 1-1 of 1 (voyage-3)
+INFO:httpx:HTTP Request: POST https://router.huggingface.co/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:layer3-1.embedder:embedding batch 1-1 of 1 (voyage-3)
+INFO:httpx:HTTP Request: POST https://router.huggingface.co/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:layer3-1.embedder:embedding batch 1-1 of 1 (voyage-3)
+WARNING:layer3-1.embedder:embeddings API -> 429 (attempt 1/3), backing off 2s
+WARNING:layer3-1.embedder:embeddings API -> 429 (attempt 2/3), backing off 4s
+WARNING:layer3-1.embedder:embeddings API -> 429 (attempt 3/3), backing off 8s
+WARNING:layer4.tools:semantic retrieval unavailable (HTTP 429: {"detail":"You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the); using keyword fallback
+INFO:httpx:HTTP Request: POST https://router.huggingface.co/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:layer3-1.embedder:embedding batch 1-1 of 1 (voyage-3)
+INFO:httpx:HTTP Request: POST https://router.huggingface.co/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:analyst.engine:growing corpus: ingesting 2 paper(s) via the pipeline
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+INFO:layer2.pipeline:loaded 9 unique papers, 9 already extracted
+INFO:layer3-1.store:loaded vector store: 110 chunks (voyage-3)
+INFO:layer3-1.index:loaded 9 papers, 9 with extracted units
+INFO:layer3-2.builder:loaded 9 papers, 9 with extracted units
+INFO:layer3-2.graph_store:wrote graph to ./storage\graph.json (227 nodes, 251 edges)
+INFO:layer3-1.embedder:embedding batch 1-1 of 1 (voyage-3)
+INFO:httpx:HTTP Request: POST https://router.huggingface.co/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:layer3-1.embedder:embedding batch 1-1 of 1 (voyage-3)
+INFO:httpx:HTTP Request: POST https://router.huggingface.co/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:layer3-1.embedder:embedding batch 1-1 of 1 (voyage-3)
+INFO:httpx:HTTP Request: POST https://router.huggingface.co/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:layer3-1.embedder:embedding batch 1-1 of 1 (voyage-3)
+WARNING:layer3-1.embedder:embeddings API -> 429 (attempt 1/3), backing off 2s
+WARNING:layer3-1.embedder:embeddings API -> 429 (attempt 2/3), backing off 4s
+WARNING:layer3-1.embedder:embeddings API -> 429 (attempt 3/3), backing off 8s
+WARNING:layer4.tools:semantic retrieval unavailable (HTTP 429: {"detail":"You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the); using keyword fallback
+INFO:httpx:HTTP Request: POST https://router.huggingface.co/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:analyst.engine:growing corpus: ingesting 2 paper(s) via the pipeline
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+INFO:layer2.pipeline:loaded 11 unique papers, 11 already extracted
+INFO:layer3-1.store:loaded vector store: 120 chunks (voyage-3)
+INFO:layer3-1.index:loaded 11 papers, 11 with extracted units
+INFO:layer3-1.embedder:embedding batch 1-14 of 14 (voyage-3)
+INFO:layer3-1.store:stored 14 new chunks (total 134)
+INFO:layer3-2.builder:loaded 11 papers, 11 with extracted units
+INFO:layer3-2.graph_store:wrote graph to ./storage\graph.json (251 nodes, 274 edges)
+INFO:analyst.engine:growing corpus: ingesting 2 paper(s) via the pipeline
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+INFO:layer2.pipeline:loaded 11 unique papers, 11 already extracted
+INFO:layer3-1.store:loaded vector store: 134 chunks (voyage-3)
+INFO:layer3-1.index:loaded 11 papers, 11 with extracted units
+INFO:layer3-2.builder:loaded 11 papers, 11 with extracted units
+INFO:layer3-2.graph_store:wrote graph to ./storage\graph.json (251 nodes, 274 edges)
+INFO:analyst.engine:growing corpus: ingesting 2 paper(s) via the pipeline
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+INFO:layer2.pipeline:loaded 11 unique papers, 11 already extracted
+INFO:layer3-1.store:loaded vector store: 134 chunks (voyage-3)
+INFO:layer3-1.index:loaded 11 papers, 11 with extracted units
+INFO:layer3-2.builder:loaded 11 papers, 11 with extracted units
+INFO:layer3-2.graph_store:wrote graph to ./storage\graph.json (251 nodes, 274 edges)
+INFO:analyst.engine:growing corpus: ingesting 2 paper(s) via the pipeline
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+INFO:layer2.pipeline:loaded 11 unique papers, 11 already extracted
+INFO:layer3-1.store:loaded vector store: 134 chunks (voyage-3)
+INFO:layer3-1.index:loaded 11 papers, 11 with extracted units
+INFO:layer3-2.builder:loaded 11 papers, 11 with extracted units
+INFO:layer3-2.graph_store:wrote graph to ./storage\graph.json (251 nodes, 274 edges)
+INFO:analyst.engine:growing corpus: ingesting 2 paper(s) via the pipeline
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+INFO:layer2.pipeline:loaded 11 unique papers, 11 already extracted
+INFO:layer3-1.store:loaded vector store: 134 chunks (voyage-3)
+INFO:layer3-1.index:loaded 11 papers, 11 with extracted units
+INFO:layer3-2.builder:loaded 11 papers, 11 with extracted units
+INFO:layer3-2.graph_store:wrote graph to ./storage\graph.json (251 nodes, 274 edges)
+INFO:analyst.engine:growing corpus: ingesting 2 paper(s) via the pipeline
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+INFO:layer2.pipeline:loaded 11 unique papers, 11 already extracted
+INFO:layer3-1.store:loaded vector store: 134 chunks (voyage-3)
+INFO:layer3-1.index:loaded 11 papers, 11 with extracted units
+INFO:layer3-2.builder:loaded 11 papers, 11 with extracted units
+INFO:layer3-2.graph_store:wrote graph to ./storage\graph.json (251 nodes, 274 edges)
+INFO:analyst.engine:growing corpus: ingesting 2 paper(s) via the pipeline
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+WARNING:layer1.base_fetcher:GROBID unreachable at http://localhost:8070/api/processFulltextDocument: HTTPConnectionPool(host='localhost', port=8070): Max retries exceeded with url: /api/processFulltextDocument (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8070): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+INFO:layer2.pipeline:loaded 11 unique papers, 11 already extracted
+INFO:layer3-1.store:loaded vector store: 134 chunks (voyage-3)
+INFO:layer3-1.index:loaded 11 papers, 11 with extracted units
+INFO:layer3-2.builder:loaded 11 papers, 11 with extracted units
+INFO:layer3-2.graph_store:wrote graph to ./storage\graph.json (251 nodes, 274 edges)
+INFO:analyst.engine:growing corpus: ingesting 2 paper(s) via the pipeline
+WARNING:layer1.base_fetcher:GET http://export.arxiv.org/api/query failed (attempt 1): HTTPConnectionPool(host='export.arxiv.org', port=80): Max retries exceeded with url: /api/query?search_query=cat%3Acs.AI&start=0&max_results=5&sortBy=submittedDate&sortOrder=descending (Caused by NameResolutionError("HTTPConnection(host='export.arxiv.org', port=80): Failed to resolve 'export.arxiv.org' ([Errno 11001] getaddrinfo failed)"))
+WARNING:layer1.base_fetcher:GET http://export.arxiv.org/api/query failed (attempt 2): HTTPConnectionPool(host='export.arxiv.org', port=80): Max retries exceeded with url: /api/query?search_query=cat%3Acs.AI&start=0&max_results=5&sortBy=submittedDate&sortOrder=descending (Caused by NameResolutionError("HTTPConnection(host='export.arxiv.org', port=80): Failed to resolve 'export.arxiv.org' ([Errno 11001] getaddrinfo failed)"))
+WARNING:layer1.base_fetcher:GET http://export.arxiv.org/api/query failed (attempt 3): HTTPConnectionPool(host='export.arxiv.org', port=80): Max retries exceeded with url: /api/query?search_query=cat%3Acs.AI&start=0&max_results=5&sortBy=submittedDate&sortOrder=descending (Caused by NameResolutionError("HTTPConnection(host='export.arxiv.org', port=80): Failed to resolve 'export.arxiv.org' ([Errno 11001] getaddrinfo failed)"))
+INFO:layer2.pipeline:loaded 11 unique papers, 11 already extracted
+INFO:layer3-1.store:loaded vector store: 134 chunks (voyage-3)
+INFO:layer3-1.index:loaded 11 papers, 11 with extracted units
+INFO:layer3-2.builder:loaded 11 papers, 11 with extracted units
+INFO:layer3-2.graph_store:wrote graph to ./storage\graph.json (251 nodes, 274 edges)

@@ -1,0 +1,15 @@
+{
+  "interval_seconds": 50,
+  "batch_size": 5,
+  "grow": 4,
+  "limit": 10,
+  "offline": false,
+  "sources": [
+    "arxiv"
+  ],
+  "queries": {
+    "arxiv": "cat:cs.AI",
+    "semantic_scholar": "large language models",
+    "openreview": "ICLR.cc/2024/Conference"
+  }
+}

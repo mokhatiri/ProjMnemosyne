@@ -1,0 +1,3382 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "type": "Paper",
+      "label": "A Unifying Lens on Supervised Fine-Tuning Through Target Distribution Design",
+      "aliases": [],
+      "paper_id": "arxiv:2606.11189v1",
+      "year": 2026,
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "doi": null,
+      "stub": false,
+      "id": "paper:arxiv:2606.11189v1"
+    },
+    {
+      "type": "Author",
+      "label": "Tong Xie",
+      "aliases": [],
+      "id": "author:tong xie"
+    },
+    {
+      "type": "Author",
+      "label": "Yuanhao Ban",
+      "aliases": [],
+      "id": "author:yuanhao ban"
+    },
+    {
+      "type": "Author",
+      "label": "Yunqi Hong",
+      "aliases": [],
+      "id": "author:yunqi hong"
+    },
+    {
+      "type": "Author",
+      "label": "Sohyun An",
+      "aliases": [],
+      "id": "author:sohyun an"
+    },
+    {
+      "type": "Author",
+      "label": "Yihang Chen",
+      "aliases": [],
+      "id": "author:yihang chen"
+    },
+    {
+      "type": "Author",
+      "label": "Cho-Jui Hsieh",
+      "aliases": [],
+      "id": "author:cho jui hsieh"
+    },
+    {
+      "type": "Paper",
+      "label": "Chain of Thought Prompting Elicits Reasoning in Large Language Models",
+      "aliases": [],
+      "paper_id": "semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "year": 2022,
+      "categories": [
+        "Computer Science"
+      ],
+      "doi": "10.52202/068431-1800",
+      "stub": false,
+      "id": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5"
+    },
+    {
+      "type": "Author",
+      "label": "Jason Wei",
+      "aliases": [],
+      "id": "author:jason wei"
+    },
+    {
+      "type": "Author",
+      "label": "Xuezhi Wang",
+      "aliases": [],
+      "id": "author:xuezhi wang"
+    },
+    {
+      "type": "Author",
+      "label": "Dale Schuurmans",
+      "aliases": [],
+      "id": "author:dale schuurmans"
+    },
+    {
+      "type": "Author",
+      "label": "Maarten Bosma",
+      "aliases": [],
+      "id": "author:maarten bosma"
+    },
+    {
+      "type": "Author",
+      "label": "Ed H. Chi",
+      "aliases": [],
+      "id": "author:ed h chi"
+    },
+    {
+      "type": "Author",
+      "label": "F. Xia",
+      "aliases": [],
+      "id": "author:f xia"
+    },
+    {
+      "type": "Author",
+      "label": "Quoc Le",
+      "aliases": [],
+      "id": "author:quoc le"
+    },
+    {
+      "type": "Author",
+      "label": "Denny Zhou",
+      "aliases": [],
+      "id": "author:denny zhou"
+    },
+    {
+      "type": "Paper",
+      "label": "dac3a172b504f4e33c029655e9befb3386e5f63a",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:dac3a172b504f4e33c029655e9befb3386e5f63a"
+    },
+    {
+      "type": "Paper",
+      "label": "bd1331b233e84bab7eba503abc60b31ac08e7881",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:bd1331b233e84bab7eba503abc60b31ac08e7881"
+    },
+    {
+      "type": "Paper",
+      "label": "b21670e8061a06ab97e7d6052c9345a326e84ff8",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:b21670e8061a06ab97e7d6052c9345a326e84ff8"
+    },
+    {
+      "type": "Paper",
+      "label": "094ff971d6a8b8ff870946c9b3ce5aa173617bfb",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:094ff971d6a8b8ff870946c9b3ce5aa173617bfb"
+    },
+    {
+      "type": "Paper",
+      "label": "341bdbcfc3febef7691a97c216ad394653211095",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:341bdbcfc3febef7691a97c216ad394653211095"
+    },
+    {
+      "type": "Paper",
+      "label": "cb5e3f085caefd1f3d5e08637ab55d39e61234fc",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:cb5e3f085caefd1f3d5e08637ab55d39e61234fc"
+    },
+    {
+      "type": "Paper",
+      "label": "23dd78e424d32f6a48660dcd67ce994b8a7db8be",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:23dd78e424d32f6a48660dcd67ce994b8a7db8be"
+    },
+    {
+      "type": "Paper",
+      "label": "5f19ae1135a9500940978104ec15a5b8751bc7d2",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:5f19ae1135a9500940978104ec15a5b8751bc7d2"
+    },
+    {
+      "type": "Paper",
+      "label": "a376e6b118a10a8cb8a2920f6b83a70f087579f5",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:a376e6b118a10a8cb8a2920f6b83a70f087579f5"
+    },
+    {
+      "type": "Paper",
+      "label": "0f733817e82026f7c29909a51cb4df7d2685f0e7",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:0f733817e82026f7c29909a51cb4df7d2685f0e7"
+    },
+    {
+      "type": "Paper",
+      "label": "d766bffc357127e0dc86dd69561d5aeb520d6f4c",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:d766bffc357127e0dc86dd69561d5aeb520d6f4c"
+    },
+    {
+      "type": "Paper",
+      "label": "f4df78183261538e718066331898ee5cad7cad05",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:f4df78183261538e718066331898ee5cad7cad05"
+    },
+    {
+      "type": "Paper",
+      "label": "2fea588313c899ac512bb90f77b7ce9d31db421d",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:2fea588313c899ac512bb90f77b7ce9d31db421d"
+    },
+    {
+      "type": "Paper",
+      "label": "03488f1a193066b5ea8b9b800e119f07df5c1d9e",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:03488f1a193066b5ea8b9b800e119f07df5c1d9e"
+    },
+    {
+      "type": "Paper",
+      "label": "b3848d32f7294ec708627897833c4097eb4d8778",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:b3848d32f7294ec708627897833c4097eb4d8778"
+    },
+    {
+      "type": "Paper",
+      "label": "07283e1578a50e15ac66efcc35b4ae0cbf2159ef",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:07283e1578a50e15ac66efcc35b4ae0cbf2159ef"
+    },
+    {
+      "type": "Paper",
+      "label": "4081aeb7ff148cc4678efca4e44a72dece4542e3",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:4081aeb7ff148cc4678efca4e44a72dece4542e3"
+    },
+    {
+      "type": "Paper",
+      "label": "0bc8eae192dbd489f8857c0f6c03cc491f72d396",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:0bc8eae192dbd489f8857c0f6c03cc491f72d396"
+    },
+    {
+      "type": "Paper",
+      "label": "68f141724814839d556a989646194be88641b143",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:68f141724814839d556a989646194be88641b143"
+    },
+    {
+      "type": "Paper",
+      "label": "92173d081b15824d22a9ef070e118744ceee8052",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:92173d081b15824d22a9ef070e118744ceee8052"
+    },
+    {
+      "type": "Paper",
+      "label": "9a258f42e333ed5ff79037724eb01747ede0bb49",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:9a258f42e333ed5ff79037724eb01747ede0bb49"
+    },
+    {
+      "type": "Paper",
+      "label": "d6045d2ccc9c09ca1671348de86d07da6bc28eea",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:d6045d2ccc9c09ca1671348de86d07da6bc28eea"
+    },
+    {
+      "type": "Paper",
+      "label": "17dd3555fd1ccf1141cf984347fa1b3fd6b009ca",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:17dd3555fd1ccf1141cf984347fa1b3fd6b009ca"
+    },
+    {
+      "type": "Paper",
+      "label": "d3640eb3b542eaf36fee2261f037a6bf0d8eac9c",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:d3640eb3b542eaf36fee2261f037a6bf0d8eac9c"
+    },
+    {
+      "type": "Paper",
+      "label": "e55391a9406245584b3e5b3225dad2e171b9a06b",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:e55391a9406245584b3e5b3225dad2e171b9a06b"
+    },
+    {
+      "type": "Paper",
+      "label": "7a79a3074e736bdd9e4ce1d46f1efe3abd6623fd",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:7a79a3074e736bdd9e4ce1d46f1efe3abd6623fd"
+    },
+    {
+      "type": "Paper",
+      "label": "4698fc4712f0212c8a3810fd67b41ee8b8896aba",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:4698fc4712f0212c8a3810fd67b41ee8b8896aba"
+    },
+    {
+      "type": "Paper",
+      "label": "0f2199296f01694ee46b6059879260fb80a84fa6",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:0f2199296f01694ee46b6059879260fb80a84fa6"
+    },
+    {
+      "type": "Paper",
+      "label": "ff0b2681d7b05e16c46dfb71d980cc2f605907cd",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:ff0b2681d7b05e16c46dfb71d980cc2f605907cd"
+    },
+    {
+      "type": "Paper",
+      "label": "934bdb14923510a2dedd3682a3f2c89f7e1ab364",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:934bdb14923510a2dedd3682a3f2c89f7e1ab364"
+    },
+    {
+      "type": "Paper",
+      "label": "a38e0f993e4805ba8a9beae4c275c91ffcec01df",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:a38e0f993e4805ba8a9beae4c275c91ffcec01df"
+    },
+    {
+      "type": "Paper",
+      "label": "28692beece311a90f5fa1ca2ec9d0c2ce293d069",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:28692beece311a90f5fa1ca2ec9d0c2ce293d069"
+    },
+    {
+      "type": "Paper",
+      "label": "acbdbf49f9bc3f151b93d9ca9a06009f4f6eb269",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:acbdbf49f9bc3f151b93d9ca9a06009f4f6eb269"
+    },
+    {
+      "type": "Paper",
+      "label": "d65a064eb837f838faf6ff67781b62450b92b159",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:d65a064eb837f838faf6ff67781b62450b92b159"
+    },
+    {
+      "type": "Paper",
+      "label": "57a1258571a21817d89197dc84c986861fb6e580",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:57a1258571a21817d89197dc84c986861fb6e580"
+    },
+    {
+      "type": "Paper",
+      "label": "82deb8df3f3c765a4a84dc072cf2a20ecaefa420",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:82deb8df3f3c765a4a84dc072cf2a20ecaefa420"
+    },
+    {
+      "type": "Paper",
+      "label": "911b7539e964782670e555930b291de16fa971c5",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:911b7539e964782670e555930b291de16fa971c5"
+    },
+    {
+      "type": "Paper",
+      "label": "ffdbd7f0b03b85747b001b4734d5ee31b5229aa4",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:ffdbd7f0b03b85747b001b4734d5ee31b5229aa4"
+    },
+    {
+      "type": "Paper",
+      "label": "21ec9c0f869bdb33b06c7dbc8880169db0397d08",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:21ec9c0f869bdb33b06c7dbc8880169db0397d08"
+    },
+    {
+      "type": "Paper",
+      "label": "3aba582b62d1abfcd95264e6c7b32aab4c9db4b8",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:3aba582b62d1abfcd95264e6c7b32aab4c9db4b8"
+    },
+    {
+      "type": "Paper",
+      "label": "446c591f913e266ccaba5684c4f5235f4b6e65d7",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:446c591f913e266ccaba5684c4f5235f4b6e65d7"
+    },
+    {
+      "type": "Paper",
+      "label": "a9fe5bd8da2d9603cf2cf6c6ea8b0f83c6d3a4f9",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:a9fe5bd8da2d9603cf2cf6c6ea8b0f83c6d3a4f9"
+    },
+    {
+      "type": "Paper",
+      "label": "13c4e5a6122f3fa2663f63e49537091da6532f35",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:13c4e5a6122f3fa2663f63e49537091da6532f35"
+    },
+    {
+      "type": "Paper",
+      "label": "57d1e7ac339e783898f2c3b1af55737cbeee9fc5",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:57d1e7ac339e783898f2c3b1af55737cbeee9fc5"
+    },
+    {
+      "type": "Paper",
+      "label": "d7ac65d335b5d847f4f5826313a8732bc7abc7a8",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:d7ac65d335b5d847f4f5826313a8732bc7abc7a8"
+    },
+    {
+      "type": "Paper",
+      "label": "ac3cdb50606f7770eef8e4cd951840a4f71287a0",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:ac3cdb50606f7770eef8e4cd951840a4f71287a0"
+    },
+    {
+      "type": "Paper",
+      "label": "5b6c582d51266be9aa7e32bfdc20891e5231eca4",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:5b6c582d51266be9aa7e32bfdc20891e5231eca4"
+    },
+    {
+      "type": "Paper",
+      "label": "346081161bdc8f18e2a4c4af7f51d35452b5cb01",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:346081161bdc8f18e2a4c4af7f51d35452b5cb01"
+    },
+    {
+      "type": "Paper",
+      "label": "343e06bae852f74a98573e798b501f6003bcb1c0",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:343e06bae852f74a98573e798b501f6003bcb1c0"
+    },
+    {
+      "type": "Paper",
+      "label": "a381826827df23f11c0dc600e1d7445fe4fa7e7c",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:a381826827df23f11c0dc600e1d7445fe4fa7e7c"
+    },
+    {
+      "type": "Paper",
+      "label": "f13e41d24e5d0a68ca662c1b49de398a6fb68251",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:f13e41d24e5d0a68ca662c1b49de398a6fb68251"
+    },
+    {
+      "type": "Paper",
+      "label": "f4874bd968b785cb9fceeccf26c333567a2b8dca",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:f4874bd968b785cb9fceeccf26c333567a2b8dca"
+    },
+    {
+      "type": "Paper",
+      "label": "f56fc41eff96afbc64030ce5e97d444706e4997c",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:f56fc41eff96afbc64030ce5e97d444706e4997c"
+    },
+    {
+      "type": "Paper",
+      "label": "af7307c05027fb6c5e907cdcb29af0b149db7056",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:af7307c05027fb6c5e907cdcb29af0b149db7056"
+    },
+    {
+      "type": "Paper",
+      "label": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:90abbc2cf38462b954ae1b772fac9532e2ccd8b0"
+    },
+    {
+      "type": "Paper",
+      "label": "dbeeca8466e0c177ec67c60d529899232415ca87",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:dbeeca8466e0c177ec67c60d529899232415ca87"
+    },
+    {
+      "type": "Paper",
+      "label": "b9a5aa5db8836744ff2073e8368520b7a614049f",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:b9a5aa5db8836744ff2073e8368520b7a614049f"
+    },
+    {
+      "type": "Paper",
+      "label": "b2a839e3ee68e81b863b73ee08c6626c94477fef",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:b2a839e3ee68e81b863b73ee08c6626c94477fef"
+    },
+    {
+      "type": "Paper",
+      "label": "3dd61d97827e3f380bf9304101149a3f865051fc",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:3dd61d97827e3f380bf9304101149a3f865051fc"
+    },
+    {
+      "type": "Paper",
+      "label": "9e12539d92088001e08b1e903c490127c479de4c",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:9e12539d92088001e08b1e903c490127c479de4c"
+    },
+    {
+      "type": "Paper",
+      "label": "e6c561d02500b2596a230b341a8eb8b921ca5bf2",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:e6c561d02500b2596a230b341a8eb8b921ca5bf2"
+    },
+    {
+      "type": "Paper",
+      "label": "6c4b76232bb72897685d19b3d264c6ee3005bc2b",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:6c4b76232bb72897685d19b3d264c6ee3005bc2b"
+    },
+    {
+      "type": "Paper",
+      "label": "730043364aed106241ef18ab3e3b5e316802a254",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:730043364aed106241ef18ab3e3b5e316802a254"
+    },
+    {
+      "type": "Paper",
+      "label": "52fa450740913a6cdcb4d9395b45e203f46cab79",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:52fa450740913a6cdcb4d9395b45e203f46cab79"
+    },
+    {
+      "type": "Paper",
+      "label": "b285c067f2da04bf5647beb8853bfddf6d9b4e1b",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:b285c067f2da04bf5647beb8853bfddf6d9b4e1b"
+    },
+    {
+      "type": "Paper",
+      "label": "874e9318c09c711ecd48a903b3824a3a03e2cd62",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:874e9318c09c711ecd48a903b3824a3a03e2cd62"
+    },
+    {
+      "type": "Paper",
+      "label": "eef7cfe8267954adbb4675576072a1d80ca7a3a8",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:eef7cfe8267954adbb4675576072a1d80ca7a3a8"
+    },
+    {
+      "type": "Paper",
+      "label": "3a6447361b20c249f5306ae17dee43f645430e31",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:3a6447361b20c249f5306ae17dee43f645430e31"
+    },
+    {
+      "type": "Paper",
+      "label": "c242438dac5aa4d9b13766c14240bb8426690d58",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:c242438dac5aa4d9b13766c14240bb8426690d58"
+    },
+    {
+      "type": "Paper",
+      "label": "f67ede490780f939103d4cc4e9c6866b83ee59b3",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:f67ede490780f939103d4cc4e9c6866b83ee59b3"
+    },
+    {
+      "type": "Paper",
+      "label": "b5246fa284f86b544a7c31f050b3bd0defd053fd",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:b5246fa284f86b544a7c31f050b3bd0defd053fd"
+    },
+    {
+      "type": "Paper",
+      "label": "94f3b096ff2969aed0c6e0cae195d8fba27858cf",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:94f3b096ff2969aed0c6e0cae195d8fba27858cf"
+    },
+    {
+      "type": "Paper",
+      "label": "3febb2bed8865945e7fddc99efd791887bb7e14f",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:3febb2bed8865945e7fddc99efd791887bb7e14f"
+    },
+    {
+      "type": "Paper",
+      "label": "e854977a9c4c2effc42f2e24064726fb6307b6f5",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:e854977a9c4c2effc42f2e24064726fb6307b6f5"
+    },
+    {
+      "type": "Paper",
+      "label": "b123a0d46ad917b79c43c5ae981e03ed2458ed11",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:b123a0d46ad917b79c43c5ae981e03ed2458ed11"
+    },
+    {
+      "type": "Paper",
+      "label": "6b024162f81e8ff7aa34c3a43d601a912d012c78",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:6b024162f81e8ff7aa34c3a43d601a912d012c78"
+    },
+    {
+      "type": "Paper",
+      "label": "4c6fe6179c408e1fbb3871af13d1a8e64f766e54",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:4c6fe6179c408e1fbb3871af13d1a8e64f766e54"
+    },
+    {
+      "type": "Paper",
+      "label": "2bdbb07bc12b8d8c332b7a84aa05e76218c07cd9",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:2bdbb07bc12b8d8c332b7a84aa05e76218c07cd9"
+    },
+    {
+      "type": "Paper",
+      "label": "17230f5b3956188055a48c5f4f61d131cce0662f",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:17230f5b3956188055a48c5f4f61d131cce0662f"
+    },
+    {
+      "type": "Paper",
+      "label": "187c25de08261760cf48b4e9dabf308d2f7f15d9",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:187c25de08261760cf48b4e9dabf308d2f7f15d9"
+    },
+    {
+      "type": "Paper",
+      "label": "0d0b3ff23fbf1ec7a0dfebd923a3ef224306491a",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:0d0b3ff23fbf1ec7a0dfebd923a3ef224306491a"
+    },
+    {
+      "type": "Paper",
+      "label": "a7862e14b4c20cefd6dc4f611f8aa866fabf130b",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:a7862e14b4c20cefd6dc4f611f8aa866fabf130b"
+    },
+    {
+      "type": "Paper",
+      "label": "99feb14a76ea4750818d5af0aa9082dfda47a587",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:99feb14a76ea4750818d5af0aa9082dfda47a587"
+    },
+    {
+      "type": "Paper",
+      "label": "bd87757bec32839742d676442dde389fce68764c",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:bd87757bec32839742d676442dde389fce68764c"
+    },
+    {
+      "type": "Paper",
+      "label": "ec64e324ce1210fe5245dfd0fb5a92058732e5b9",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:ec64e324ce1210fe5245dfd0fb5a92058732e5b9"
+    },
+    {
+      "type": "Paper",
+      "label": "f40aeae3e522ada1f6a9f326841b01ef5c8657b6",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:f40aeae3e522ada1f6a9f326841b01ef5c8657b6"
+    },
+    {
+      "type": "Paper",
+      "label": "e811e771f5950d86eafe50655c0d1e5b571e19b6",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:e811e771f5950d86eafe50655c0d1e5b571e19b6"
+    },
+    {
+      "type": "Paper",
+      "label": "53d8b356551a2361020a948f64454a6d599af69f",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:53d8b356551a2361020a948f64454a6d599af69f"
+    },
+    {
+      "type": "Paper",
+      "label": "c89d5766d25466830391ccecabe53e0bf2a92425",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:c89d5766d25466830391ccecabe53e0bf2a92425"
+    },
+    {
+      "type": "Paper",
+      "label": "e52e5e8b4d798a4a256ee34b528e350eddea9ccf",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:e52e5e8b4d798a4a256ee34b528e350eddea9ccf"
+    },
+    {
+      "type": "Paper",
+      "label": "43bafb4997515d2904abfca8214f2fc806680fc3",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:43bafb4997515d2904abfca8214f2fc806680fc3"
+    },
+    {
+      "type": "Paper",
+      "label": "c21a4d70d83e0f6eb2a9e1c41d034842dd561e47",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:c21a4d70d83e0f6eb2a9e1c41d034842dd561e47"
+    },
+    {
+      "type": "Paper",
+      "label": "df2b0e26d0599ce3e70df8a9da02e51594e0e992",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:df2b0e26d0599ce3e70df8a9da02e51594e0e992"
+    },
+    {
+      "type": "Paper",
+      "label": "99fe982dce046869f60e4552c7f91c3627304780",
+      "aliases": [],
+      "stub": true,
+      "id": "paper:99fe982dce046869f60e4552c7f91c3627304780"
+    },
+    {
+      "type": "Paper",
+      "label": "UBP2: Uncertainty-Balanced Preference Planning for Efficient Preference-based Reinforcement Learning",
+      "aliases": [],
+      "paper_id": "arxiv:2606.19328v1",
+      "year": 2026,
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "doi": null,
+      "stub": false,
+      "id": "paper:arxiv:2606.19328v1"
+    },
+    {
+      "type": "Author",
+      "label": "Mohamed Nabail",
+      "aliases": [],
+      "id": "author:mohamed nabail"
+    },
+    {
+      "type": "Author",
+      "label": "Leo Cheng",
+      "aliases": [],
+      "id": "author:leo cheng"
+    },
+    {
+      "type": "Author",
+      "label": "Jingmin Wang",
+      "aliases": [],
+      "id": "author:jingmin wang"
+    },
+    {
+      "type": "Author",
+      "label": "Nicholas Rhinehart",
+      "aliases": [],
+      "id": "author:nicholas rhinehart"
+    },
+    {
+      "type": "Paper",
+      "label": "Rethinking Reward Supervision: Rubric-Conditioned Self-Distillation",
+      "aliases": [],
+      "paper_id": "arxiv:2606.19327v1",
+      "year": 2026,
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "doi": null,
+      "stub": false,
+      "id": "paper:arxiv:2606.19327v1"
+    },
+    {
+      "type": "Author",
+      "label": "Siyi Gu",
+      "aliases": [],
+      "id": "author:siyi gu"
+    },
+    {
+      "type": "Author",
+      "label": "Jialin Chen",
+      "aliases": [],
+      "id": "author:jialin chen"
+    },
+    {
+      "type": "Author",
+      "label": "Sophia Zhou",
+      "aliases": [],
+      "id": "author:sophia zhou"
+    },
+    {
+      "type": "Author",
+      "label": "Arman Cohan",
+      "aliases": [],
+      "id": "author:arman cohan"
+    },
+    {
+      "type": "Author",
+      "label": "Rex Ying",
+      "aliases": [],
+      "id": "author:rex ying"
+    },
+    {
+      "type": "Paper",
+      "label": "Reference-Driven Multi-Speaker Audio Scene Generation from In-the-Wild Priors",
+      "aliases": [],
+      "paper_id": "arxiv:2606.19325v1",
+      "year": 2026,
+      "categories": [
+        "cs.SD",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "doi": null,
+      "stub": false,
+      "id": "paper:arxiv:2606.19325v1"
+    },
+    {
+      "type": "Author",
+      "label": "Michael Finkelson",
+      "aliases": [],
+      "id": "author:michael finkelson"
+    },
+    {
+      "type": "Author",
+      "label": "Daniel Segal",
+      "aliases": [],
+      "id": "author:daniel segal"
+    },
+    {
+      "type": "Author",
+      "label": "Eitan Richardson",
+      "aliases": [],
+      "id": "author:eitan richardson"
+    },
+    {
+      "type": "Author",
+      "label": "Shahar Armon",
+      "aliases": [],
+      "id": "author:shahar armon"
+    },
+    {
+      "type": "Author",
+      "label": "Nani Goldring",
+      "aliases": [],
+      "id": "author:nani goldring"
+    },
+    {
+      "type": "Author",
+      "label": "Poriya Panet",
+      "aliases": [],
+      "id": "author:poriya panet"
+    },
+    {
+      "type": "Author",
+      "label": "Nir Zabari",
+      "aliases": [],
+      "id": "author:nir zabari"
+    },
+    {
+      "type": "Author",
+      "label": "Benjamin Brazowski",
+      "aliases": [],
+      "id": "author:benjamin brazowski"
+    },
+    {
+      "type": "Author",
+      "label": "Or Patashnik",
+      "aliases": [],
+      "id": "author:or patashnik"
+    },
+    {
+      "type": "Author",
+      "label": "Yoav HaCohen",
+      "aliases": [],
+      "id": "author:yoav hacohen"
+    },
+    {
+      "type": "Paper",
+      "label": "Data Intelligence Agents: Interpreting, Modeling, and Querying Enterprise Data via Autonomous Coding Agents",
+      "aliases": [],
+      "paper_id": "arxiv:2606.19319v1",
+      "year": 2026,
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.DB"
+      ],
+      "doi": null,
+      "stub": false,
+      "id": "paper:arxiv:2606.19319v1"
+    },
+    {
+      "type": "Author",
+      "label": "Anoushka Vyas",
+      "aliases": [],
+      "id": "author:anoushka vyas"
+    },
+    {
+      "type": "Author",
+      "label": "Aarushi Dhanuka",
+      "aliases": [],
+      "id": "author:aarushi dhanuka"
+    },
+    {
+      "type": "Author",
+      "label": "Sina Khoshfetrat Pakazad",
+      "aliases": [],
+      "id": "author:sina khoshfetrat pakazad"
+    },
+    {
+      "type": "Author",
+      "label": "Henrik Ohlsson",
+      "aliases": [],
+      "id": "author:henrik ohlsson"
+    },
+    {
+      "type": "Paper",
+      "label": "Explaining Attention with Program Synthesis",
+      "aliases": [],
+      "paper_id": "arxiv:2606.19317v1",
+      "year": 2026,
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "doi": null,
+      "stub": false,
+      "id": "paper:arxiv:2606.19317v1"
+    },
+    {
+      "type": "Author",
+      "label": "Amiri Hayes",
+      "aliases": [],
+      "id": "author:amiri hayes"
+    },
+    {
+      "type": "Author",
+      "label": "Belinda Li",
+      "aliases": [],
+      "id": "author:belinda li"
+    },
+    {
+      "type": "Author",
+      "label": "Jacob Andreas",
+      "aliases": [],
+      "id": "author:jacob andreas"
+    },
+    {
+      "type": "Paper",
+      "label": "How Transparent is DiffusionGemma?",
+      "aliases": [],
+      "paper_id": "arxiv:2606.20560v1",
+      "year": 2026,
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "doi": null,
+      "stub": false,
+      "id": "paper:arxiv:2606.20560v1"
+    },
+    {
+      "type": "Author",
+      "label": "Joshua Engels",
+      "aliases": [],
+      "id": "author:joshua engels"
+    },
+    {
+      "type": "Author",
+      "label": "Callum McDougall",
+      "aliases": [],
+      "id": "author:callum mcdougall"
+    },
+    {
+      "type": "Author",
+      "label": "Bilal Chughtai",
+      "aliases": [],
+      "id": "author:bilal chughtai"
+    },
+    {
+      "type": "Author",
+      "label": "Janos Kramar",
+      "aliases": [],
+      "id": "author:janos kramar"
+    },
+    {
+      "type": "Author",
+      "label": "Senthoran Rajamanoharan",
+      "aliases": [],
+      "id": "author:senthoran rajamanoharan"
+    },
+    {
+      "type": "Author",
+      "label": "Cindy Wu",
+      "aliases": [],
+      "id": "author:cindy wu"
+    },
+    {
+      "type": "Author",
+      "label": "Arthur Conmy",
+      "aliases": [],
+      "id": "author:arthur conmy"
+    },
+    {
+      "type": "Author",
+      "label": "Asic Q Chen",
+      "aliases": [],
+      "id": "author:asic q chen"
+    },
+    {
+      "type": "Author",
+      "label": "Jean Tarbouriech",
+      "aliases": [],
+      "id": "author:jean tarbouriech"
+    },
+    {
+      "type": "Author",
+      "label": "Min Ma",
+      "aliases": [],
+      "id": "author:min ma"
+    },
+    {
+      "type": "Author",
+      "label": "Brendan O'Donoghue",
+      "aliases": [],
+      "id": "author:brendan o donoghue"
+    },
+    {
+      "type": "Author",
+      "label": "João Gabriel Lopes de Oliveira",
+      "aliases": [],
+      "id": "author:jo o gabriel lopes de oliveira"
+    },
+    {
+      "type": "Author",
+      "label": "Rohin Shah",
+      "aliases": [],
+      "id": "author:rohin shah"
+    },
+    {
+      "type": "Author",
+      "label": "Neel Nanda",
+      "aliases": [],
+      "id": "author:neel nanda"
+    },
+    {
+      "type": "Paper",
+      "label": "Structuring and Tokenizing Distributed User Interest Context for Generative Recommendation",
+      "aliases": [],
+      "paper_id": "arxiv:2606.20554v1",
+      "year": 2026,
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "doi": null,
+      "stub": false,
+      "id": "paper:arxiv:2606.20554v1"
+    },
+    {
+      "type": "Author",
+      "label": "Ruizhong Qiu",
+      "aliases": [],
+      "id": "author:ruizhong qiu"
+    },
+    {
+      "type": "Author",
+      "label": "Yinglong Xia",
+      "aliases": [],
+      "id": "author:yinglong xia"
+    },
+    {
+      "type": "Author",
+      "label": "Dongqi Fu",
+      "aliases": [],
+      "id": "author:dongqi fu"
+    },
+    {
+      "type": "Author",
+      "label": "Hanqing Zeng",
+      "aliases": [],
+      "id": "author:hanqing zeng"
+    },
+    {
+      "type": "Author",
+      "label": "Ren Chen",
+      "aliases": [],
+      "id": "author:ren chen"
+    },
+    {
+      "type": "Author",
+      "label": "Xiangjun Fan",
+      "aliases": [],
+      "id": "author:xiangjun fan"
+    },
+    {
+      "type": "Author",
+      "label": "Hong Li",
+      "aliases": [],
+      "id": "author:hong li"
+    },
+    {
+      "type": "Author",
+      "label": "Hong Yan",
+      "aliases": [],
+      "id": "author:hong yan"
+    },
+    {
+      "type": "Author",
+      "label": "Hanghang Tong",
+      "aliases": [],
+      "id": "author:hanghang tong"
+    },
+    {
+      "type": "Paper",
+      "label": "Toward Calibrated Mixture-of-Experts Under Distribution Shift",
+      "aliases": [],
+      "paper_id": "arxiv:2606.20544v1",
+      "year": 2026,
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "stub": false,
+      "id": "paper:arxiv:2606.20544v1"
+    },
+    {
+      "type": "Author",
+      "label": "Gina Wong",
+      "aliases": [],
+      "id": "author:gina wong"
+    },
+    {
+      "type": "Author",
+      "label": "Drew Prinster",
+      "aliases": [],
+      "id": "author:drew prinster"
+    },
+    {
+      "type": "Author",
+      "label": "Suchi Saria",
+      "aliases": [],
+      "id": "author:suchi saria"
+    },
+    {
+      "type": "Author",
+      "label": "Rama Chellappa",
+      "aliases": [],
+      "id": "author:rama chellappa"
+    },
+    {
+      "type": "Author",
+      "label": "Anqi Liu",
+      "aliases": [],
+      "id": "author:anqi liu"
+    },
+    {
+      "type": "Paper",
+      "label": "How Do Instructions Shape Speech? Cross-Attention Attribution for Style-Captioned Text-to-Speech",
+      "aliases": [],
+      "paper_id": "arxiv:2606.20532v1",
+      "year": 2026,
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "stub": false,
+      "id": "paper:arxiv:2606.20532v1"
+    },
+    {
+      "type": "Author",
+      "label": "Nityanand Mathur",
+      "aliases": [],
+      "id": "author:nityanand mathur"
+    },
+    {
+      "type": "Author",
+      "label": "Hamees Sayed",
+      "aliases": [],
+      "id": "author:hamees sayed"
+    },
+    {
+      "type": "Author",
+      "label": "Wasim Madha",
+      "aliases": [],
+      "id": "author:wasim madha"
+    },
+    {
+      "type": "Author",
+      "label": "Apoorv Singh",
+      "aliases": [],
+      "id": "author:apoorv singh"
+    },
+    {
+      "type": "Author",
+      "label": "Sameer Khurana",
+      "aliases": [],
+      "id": "author:sameer khurana"
+    },
+    {
+      "type": "Author",
+      "label": "Akshat Mandloi",
+      "aliases": [],
+      "id": "author:akshat mandloi"
+    },
+    {
+      "type": "Author",
+      "label": "Sudarshan Kamath",
+      "aliases": [],
+      "id": "author:sudarshan kamath"
+    },
+    {
+      "type": "Claim",
+      "label": "Generating a chain of thought improves the ability of large language models to perform complex reasoning.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "Experiments on three large language models show that chain of thought prompting improves performance on a range of arithmetic, commonsense, and symbolic reasoning tasks.",
+      "section": "Abstract",
+      "paper_id": "semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "id": "claim:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5:0"
+    },
+    {
+      "type": "Claim",
+      "label": "Chain of thought reasoning abilities emerge naturally in sufficiently large language models via chain of thought prompting.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "In particular, we show how such reasoning abilities emerge naturally in sufficiently large language models via a simple method called chain of thought prompting, where a few chain of thought demonstrations are provided as exemplars in prompting.",
+      "section": "Abstract",
+      "paper_id": "semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "id": "claim:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5:1"
+    },
+    {
+      "type": "Claim",
+      "label": "Prompting a 540B-parameter language model with just eight chain of thought exemplars achieves state-of-the-art accuracy on the GSM8K benchmark of math word problems.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "For instance, prompting a 540B-parameter language model with just eight chain of thought exemplars achieves state of the art accuracy on the GSM8K benchmark of math word problems, surpassing even finetuned GPT-3 with a verifier.",
+      "section": "Abstract",
+      "paper_id": "semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "id": "claim:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5:2"
+    },
+    {
+      "type": "Method",
+      "label": "Chain of Thought Prompting",
+      "aliases": [],
+      "role": "introduced",
+      "description": "A method where a few chain of thought demonstrations are provided as exemplars in prompting to improve complex reasoning in large language models.",
+      "id": "method:chain of thought prompting"
+    },
+    {
+      "type": "Dataset",
+      "label": "GSM8K",
+      "aliases": [],
+      "purpose": "Evaluation of math word problems",
+      "id": "dataset:gsm8k"
+    },
+    {
+      "type": "Claim",
+      "label": "Supervised fine-tuning (SFT) can be more effective when the target distribution is designed to account for token uncertainty and model prior.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "TARGET-SFT, which constructs the training objective directly from the desired target distribution, consistently outperforms across the ten reasoning dataset-model settings evaluated.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.11189v1",
+      "id": "claim:arxiv:2606.11189v1:0"
+    },
+    {
+      "type": "Claim",
+      "label": "The Q-target framework unifies many existing SFT variants by decomposing objective design into two explicit choices: how much to rely on the observed token and how to allocate the remaining probability mass.",
+      "aliases": [],
+      "claim_type": "theoretical",
+      "confidence": "explicit",
+      "evidence": "The Q-target framework reveals that many existing SFT variants can be understood as varying ways of answering these two questions, and seemingly different losses correspond to implicit choices of target distribution Q.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.11189v1",
+      "id": "claim:arxiv:2606.11189v1:1"
+    },
+    {
+      "type": "Claim",
+      "label": "TARGET-SFT adaptively balances strict imitation and prior preservation, leading to better performance on reasoning tasks.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "TARGET-SFT consistently gives the best results across all models on both mathematical and medical reasoning tasks.",
+      "section": "7.2 Main Results",
+      "paper_id": "arxiv:2606.11189v1",
+      "id": "claim:arxiv:2606.11189v1:2"
+    },
+    {
+      "type": "Method",
+      "label": "Q-target framework",
+      "aliases": [],
+      "role": "introduced",
+      "description": "A framework for supervised fine-tuning that decomposes the target distribution into two choices: how much to rely on the observed token and how to allocate the remaining probability mass.",
+      "id": "method:q target framework"
+    },
+    {
+      "type": "Method",
+      "label": "TARGET-SFT",
+      "aliases": [],
+      "role": "introduced",
+      "description": "A method that constructs the training objective directly from the desired target distribution, using the Q-target framework.",
+      "id": "method:target sft"
+    },
+    {
+      "type": "Method",
+      "label": "Standard SFT",
+      "aliases": [],
+      "role": "used",
+      "description": "A method that maximizes the likelihood of every token in a demonstrated trajectory using a one-hot target distribution.",
+      "id": "method:standard sft"
+    },
+    {
+      "type": "Method",
+      "label": "Knowledge Distillation",
+      "aliases": [],
+      "role": "used",
+      "description": "A method that uses the teacher distribution as a soft target for supervision.",
+      "id": "method:knowledge distillation"
+    },
+    {
+      "type": "Dataset",
+      "label": "NuminaMath-CoT",
+      "aliases": [],
+      "purpose": "Training and evaluation for mathematical reasoning tasks",
+      "id": "dataset:numinamath cot"
+    },
+    {
+      "type": "Dataset",
+      "label": "OpenR1-15k",
+      "aliases": [],
+      "purpose": "Training and evaluation for mathematical reasoning tasks",
+      "id": "dataset:openr1 15k"
+    },
+    {
+      "type": "Dataset",
+      "label": "m23k",
+      "aliases": [],
+      "purpose": "Training and evaluation for medical reasoning tasks",
+      "id": "dataset:m23k"
+    },
+    {
+      "type": "Claim",
+      "label": "UBP2 achieves higher sample efficiency than model-free preference-based methods and non-optimistic model-based baselines on the Meta-World benchmark.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "Empirically, experiments on the Meta-World benchmark show UBP2 achieves substantially higher sample efficiency than model-free preference-based methods and non-optimistic model-based baselines.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19328v1",
+      "id": "claim:arxiv:2606.19328v1:0"
+    },
+    {
+      "type": "Claim",
+      "label": "UBP2 uses ensembles of reward, dynamics, and value function models to evaluate candidate trajectories according to a unified score.",
+      "aliases": [],
+      "claim_type": "methodological",
+      "confidence": "explicit",
+      "evidence": "Our method, Uncertainty-Balanced Preference Planning (UBP2), uses ensembles of reward, dynamics, and value function models to evaluate candidate trajectories according to a unified score that combines expected reward, terminal value, and epistemic uncertainty.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19328v1",
+      "id": "claim:arxiv:2606.19328v1:1"
+    },
+    {
+      "type": "Claim",
+      "label": "UBP2 establishes sublinear regret guarantees for both finite-horizon and infinite-horizon settings under standard regularity assumptions.",
+      "aliases": [],
+      "claim_type": "theoretical",
+      "confidence": "explicit",
+      "evidence": "Under standard regularity assumptions, we establish sublinear regret guarantees for both finite-horizon and infinite-horizon settings.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19328v1",
+      "id": "claim:arxiv:2606.19328v1:2"
+    },
+    {
+      "type": "Method",
+      "label": "Uncertainty-Balanced Preference Planning (UBP2)",
+      "aliases": [],
+      "role": "introduced",
+      "description": "A model-based approach that actively directs exploration by jointly reasoning over uncertainties in the reward, dynamics, and value functions.",
+      "id": "method:uncertainty balanced preference planning ubp2"
+    },
+    {
+      "type": "Dataset",
+      "label": "Meta-World",
+      "aliases": [],
+      "purpose": "Evaluation",
+      "id": "dataset:meta world"
+    },
+    {
+      "type": "Claim",
+      "label": "Chain-of-thought annotations used in distillation can be expensive, noisy, incomplete, or partially incorrect.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "Distillation often relies on chain-of-thought annotations that are expensive to obtain and may themselves be noisy, incomplete, or partially incorrect",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19327v1",
+      "id": "claim:arxiv:2606.19327v1:0"
+    },
+    {
+      "type": "Claim",
+      "label": "Reinforcement learning with verified rewards typically compresses evaluative feedback into a scalar signal, obscuring which aspects of a response should be improved.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "Reinforcement learning with verified rewards, on the other hand, typically compresses evaluative feedback into a scalar signal, obscuring which aspects of a response should be improved",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19327v1",
+      "id": "claim:arxiv:2606.19327v1:1"
+    },
+    {
+      "type": "Claim",
+      "label": "Rubric-Conditioned Self-Distillation incorporates rubrics as structured, fine-grained feedback for on-policy self-distillation.",
+      "aliases": [],
+      "claim_type": "methodological",
+      "confidence": "explicit",
+      "evidence": "We propose Rubric-Conditioned Self-Distillation, a framework that incorporates rubrics as structured, fine-grained feedback for on-policy self-distillation",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19327v1",
+      "id": "claim:arxiv:2606.19327v1:2"
+    },
+    {
+      "type": "Claim",
+      "label": "Rubric-Conditioned Self-Distillation avoids treating a single reference rationale as the sole supervision target.",
+      "aliases": [],
+      "claim_type": "methodological",
+      "confidence": "explicit",
+      "evidence": "This design avoids treating a single reference rationale as the sole supervision target",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19327v1",
+      "id": "claim:arxiv:2606.19327v1:3"
+    },
+    {
+      "type": "Claim",
+      "label": "Rubric-Conditioned Self-Distillation enables more fine-grained credit assignment over the reasoning process than scalar reward optimization.",
+      "aliases": [],
+      "claim_type": "methodological",
+      "confidence": "explicit",
+      "evidence": "Instead, rubrics specify what a strong response should satisfy, enabling more fine-grained credit assignment over the reasoning process than scalar reward optimization",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19327v1",
+      "id": "claim:arxiv:2606.19327v1:4"
+    },
+    {
+      "type": "Claim",
+      "label": "Rubric-Conditioned Self-Distillation surpasses GRPO by 1.0 points and OPSD by 0.9 points on average on a diverse suite of science reasoning benchmarks.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "We evaluate on a diverse suite of science reasoning benchmarks and results show that rubric-conditioned self-distillation effectively converts rubric-level criteria into token-level guidance over the reasoning process, surpassing GRPO by 1.0 points and OPSD by 0.9 points on average",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19327v1",
+      "id": "claim:arxiv:2606.19327v1:5"
+    },
+    {
+      "type": "Method",
+      "label": "Rubric-Conditioned Self-Distillation",
+      "aliases": [],
+      "role": "introduced",
+      "description": "A framework that incorporates rubrics as structured, fine-grained feedback for on-policy self-distillation.",
+      "id": "method:rubric conditioned self distillation"
+    },
+    {
+      "type": "Dataset",
+      "label": "Diverse suite of science reasoning benchmarks",
+      "aliases": [],
+      "purpose": "Evaluation",
+      "id": "dataset:diverse suite of science reasoning benchmarks"
+    },
+    {
+      "type": "Claim",
+      "label": "ScenA outperforms existing multi-speaker systems on speaker-binding metrics while generating rich conversational audio with overlapping speech, emotional vocalizations, and ambient sound.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "We evaluate ScenA on the CoVoMix2-Dialogue benchmark, showing that it outperforms existing multi-speaker systems on speaker-binding metrics while generating rich conversational audio with overlapping speech, emotional vocalizations, and ambient sound.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19325v1",
+      "id": "claim:arxiv:2606.19325v1:0"
+    },
+    {
+      "type": "Claim",
+      "label": "The Reference Shortcut is a critical obstacle in conditioning a text-to-audio flow-matching foundation model on multiple reference voices and a free-form natural language prompt.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "However, we identify a critical obstacle to this approach: the Reference Shortcut. During training under standard noise schedules, the model can identify the matching reference by acoustic similarity to the noisy target, bypassing the text prompt entirely.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19325v1",
+      "id": "claim:arxiv:2606.19325v1:1"
+    },
+    {
+      "type": "Claim",
+      "label": "A high-noise-biased timestep distribution addresses the Reference Shortcut by forcing the model to rely on the text prompt for speaker assignment.",
+      "aliases": [],
+      "claim_type": "methodological",
+      "confidence": "explicit",
+      "evidence": "We address this with a high-noise-biased timestep distribution that forces the model to rely on the text prompt for speaker assignment.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19325v1",
+      "id": "claim:arxiv:2606.19325v1:2"
+    },
+    {
+      "type": "Method",
+      "label": "ScenA",
+      "aliases": [],
+      "role": "introduced",
+      "description": "A method that conditions a text-to-audio flow-matching foundation model on multiple reference voices and a free-form natural language prompt to generate multi-speaker audio scenes.",
+      "id": "method:scena"
+    },
+    {
+      "type": "Method",
+      "label": "high-noise-biased timestep distribution",
+      "aliases": [],
+      "role": "introduced",
+      "description": "A technique to address the Reference Shortcut by forcing the model to rely on the text prompt for speaker assignment.",
+      "id": "method:high noise biased timestep distribution"
+    },
+    {
+      "type": "Dataset",
+      "label": "CoVoMix2-Dialogue",
+      "aliases": [],
+      "purpose": "Evaluation benchmark for multi-speaker systems",
+      "id": "dataset:covomix2 dialogue"
+    },
+    {
+      "type": "Claim",
+      "label": "Data Intelligence Agents (DIA) compresses the workflow of data integration by using autonomous coding agents (ACAs) that generate, execute, validate, and repair concrete artifacts.",
+      "aliases": [],
+      "claim_type": "methodological",
+      "confidence": "explicit",
+      "evidence": "rather than emitting text, the agents generate, execute, validate, and repair concrete artifacts",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19319v1",
+      "id": "claim:arxiv:2606.19319v1:0"
+    },
+    {
+      "type": "Claim",
+      "label": "DIA agents draw on a shared memory for experience reuse and surface each for review by domain experts.",
+      "aliases": [],
+      "claim_type": "methodological",
+      "confidence": "explicit",
+      "evidence": "draw on a shared memory for experience reuse, and surface each for review by domain experts",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19319v1",
+      "id": "claim:arxiv:2606.19319v1:1"
+    },
+    {
+      "type": "Claim",
+      "label": "The Query Generator in DIA matches or surpasses the best published results on all seven SQL benchmarks.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "It matches or surpasses the best published results on all seven",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19319v1",
+      "id": "claim:arxiv:2606.19319v1:2"
+    },
+    {
+      "type": "Claim",
+      "label": "The architecture of DIA, grounded in execution and built on ACAs and a shared memory, generalizes across the data intelligence workload with adaptation confined to natural-language instructions.",
+      "aliases": [],
+      "claim_type": "methodological",
+      "confidence": "explicit",
+      "evidence": "an architecture grounded in execution, built on ACAs and a shared memory, generalizes across the data intelligence workload with adaptation confined to natural-language instructions",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19319v1",
+      "id": "claim:arxiv:2606.19319v1:3"
+    },
+    {
+      "type": "Method",
+      "label": "Data Intelligence Agents (DIA)",
+      "aliases": [],
+      "role": "introduced",
+      "description": "A system of three agents (Data Interpreter, Schema Creator, and Query Generator) that compresses the workflow of data integration by using autonomous coding agents (ACAs).",
+      "id": "method:data intelligence agents dia"
+    },
+    {
+      "type": "Method",
+      "label": "Query Generator",
+      "aliases": [],
+      "role": "introduced",
+      "description": "An agent within DIA that generates SQL queries and is evaluated in fully autonomous mode.",
+      "id": "method:query generator"
+    },
+    {
+      "type": "Dataset",
+      "label": "Seven SQL benchmarks",
+      "aliases": [],
+      "purpose": "Evaluation of the Query Generator in DIA",
+      "id": "dataset:seven sql benchmarks"
+    },
+    {
+      "type": "Claim",
+      "label": "A set of fewer than 1,000 generated programs can reproduce the attention patterns of heads in GPT-2, TinyLlama-1.1B, and Llama-3B, achieving an average Intersection-over-Union similarity above 75% on TinyStories.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "We demonstrate that a set of fewer than 1,000 such generated programs can reproduce the attention patterns of heads in GPT-2, TinyLlama-1.1B, and Llama-3B, achieving an average Intersection-over-Union similarity above 75% on TinyStories.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19317v1",
+      "id": "claim:arxiv:2606.19317v1:0"
+    },
+    {
+      "type": "Claim",
+      "label": "Replacing 25% of attention heads with programmatic surrogates across the three models incurs only a 16% average perplexity increase, while maintaining performance on a variety of downstream question answering benchmarks.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "Moreover, the best-fit programs can replace neural attention heads without substantially affecting model behavior: replacing 25% of attention heads with programmatic surrogates across the three models incurs only a 16% average perplexity increase, while maintaining performance on a variety of downstream question answering benchmarks.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19317v1",
+      "id": "claim:arxiv:2606.19317v1:1"
+    },
+    {
+      "type": "Claim",
+      "label": "The proposed approach contributes a scalable pipeline for reverse-engineering attention heads in transformer models using human-readable, executable code.",
+      "aliases": [],
+      "claim_type": "methodological",
+      "confidence": "explicit",
+      "evidence": "This work contributes a scalable pipeline for reverse-engineering attention heads in transformer models using human-readable, executable code, advancing a path toward symbolic transparency in neural models.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.19317v1",
+      "id": "claim:arxiv:2606.19317v1:2"
+    },
+    {
+      "type": "Method",
+      "label": "Program Synthesis for Attention Heads",
+      "aliases": [],
+      "role": "introduced",
+      "description": "A method for approximating the behavior of attention heads in transformer language models with executable programs.",
+      "id": "method:program synthesis for attention heads"
+    },
+    {
+      "type": "Dataset",
+      "label": "TinyStories",
+      "aliases": [],
+      "purpose": "Evaluation",
+      "id": "dataset:tinystories"
+    },
+    {
+      "type": "Claim",
+      "label": "G2Rec, a scalable framework, unifies holistic graph-based user co-engagement modeling with semantic tokenization for industrial-scale generative recommendation.",
+      "aliases": [],
+      "claim_type": "methodological",
+      "confidence": "explicit",
+      "evidence": "we propose G2Rec, a scalable framework that unifies holistic graph-based user co-engagement modeling with semantic tokenization for industrial-scale generative recommendation.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20554v1",
+      "id": "claim:arxiv:2606.20554v1:0"
+    },
+    {
+      "type": "Claim",
+      "label": "G2Rec enables recommendation models to capture holistic and semantically grounded user interest prototypes without requiring ground-truth user interests.",
+      "aliases": [],
+      "claim_type": "methodological",
+      "confidence": "explicit",
+      "evidence": "G2Rec enables recommendation models to capture holistic and semantically grounded user interest prototypes without requiring ground-truth user interests",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20554v1",
+      "id": "claim:arxiv:2606.20554v1:1"
+    },
+    {
+      "type": "Claim",
+      "label": "G2Rec provides more comprehensive and accurate modeling of user behavior contexts in industrial sequential recommendation.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "thereby providing more comprehensive and accurate modeling of user behavior contexts in industrial sequential recommendation",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20554v1",
+      "id": "claim:arxiv:2606.20554v1:2"
+    },
+    {
+      "type": "Claim",
+      "label": "Online deployment across product surfaces and extensive experiments on public datasets demonstrate the superiority of G2Rec over existing methods.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "Online deployment across product surfaces and extensive experiments on public datasets demonstrate the superiority of G2Rec over existing methods",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20554v1",
+      "id": "claim:arxiv:2606.20554v1:3"
+    },
+    {
+      "type": "Method",
+      "label": "G2Rec",
+      "aliases": [],
+      "role": "introduced",
+      "description": "A scalable framework that unifies holistic graph-based user co-engagement modeling with semantic tokenization for industrial-scale generative recommendation.",
+      "id": "method:g2rec"
+    },
+    {
+      "type": "Dataset",
+      "label": "public datasets",
+      "aliases": [],
+      "purpose": "evaluation",
+      "id": "dataset:public datasets"
+    },
+    {
+      "type": "Claim",
+      "label": "DiffusionGemma has a higher opaque serial depth compared to the autoregressive Gemma 4 model.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "naively, DiffusionGemma has poor variable transparency: its opaque serial depth, the amount of serial computation that occurs in between interpretable model states, seems at first 28.6X higher than the corresponding autoregressive Gemma 4 model.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20560v1",
+      "id": "claim:arxiv:2606.20560v1:0"
+    },
+    {
+      "type": "Claim",
+      "label": "Mapping the information flow between denoising steps through an interpretable token bottleneck does not decrease downstream performance.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "we show that we can map the information flowing between denoising steps through an interpretable token bottleneck with no decrease in downstream performance.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20560v1",
+      "id": "claim:arxiv:2606.20560v1:1"
+    },
+    {
+      "type": "Claim",
+      "label": "Reducing the opaque serial depth of DiffusionGemma to 1.1X that of Gemma 4 improves variable transparency.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "Treating these intermediate states as interpretable reduces the opaque serial depth to just 1.1X that of Gemma 4.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20560v1",
+      "id": "claim:arxiv:2606.20560v1:2"
+    },
+    {
+      "type": "Claim",
+      "label": "Algorithmic transparency is more challenging for diffusion models compared to autoregressive models.",
+      "aliases": [],
+      "claim_type": "theoretical",
+      "confidence": "explicit",
+      "evidence": "Algorithmic transparency is harder for diffusion models than for autoregressive models because all token predictions in the canvas can change at every denoising step, giving the model the power to implement complicated distributed algorithms during the denoising process.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20560v1",
+      "id": "claim:arxiv:2606.20560v1:3"
+    },
+    {
+      "type": "Claim",
+      "label": "DiffusionGemma exhibits novel diffusion-specific phenomena such as non-chronological reasoning, token and sequence smearing, and intermediate-context reasoning.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "we conduct a suite of interpretability case studies, uncovering initial evidence of novel diffusion-specific phenomena such as non-chronological reasoning, token and sequence smearing, and intermediate-context reasoning.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20560v1",
+      "id": "claim:arxiv:2606.20560v1:4"
+    },
+    {
+      "type": "Claim",
+      "label": "DiffusionGemma is similarly monitorable to Gemma 4.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "Finally, we test monitorability, a key application of transparency that measures whether model outputs are useful for downstream tasks. We find that DiffusionGemma is similarly monitorable to Gemma 4.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20560v1",
+      "id": "claim:arxiv:2606.20560v1:5"
+    },
+    {
+      "type": "Method",
+      "label": "DiffusionGemma",
+      "aliases": [],
+      "role": "used",
+      "description": "A diffusion model used for studying transparency in LLM reasoning.",
+      "id": "method:diffusiongemma"
+    },
+    {
+      "type": "Method",
+      "label": "Gemma 4",
+      "aliases": [],
+      "role": "used",
+      "description": "An autoregressive model used for comparison with DiffusionGemma.",
+      "id": "method:gemma 4"
+    },
+    {
+      "type": "Method",
+      "label": "interpretable token bottleneck",
+      "aliases": [],
+      "role": "introduced",
+      "description": "A technique to map information flow between denoising steps in DiffusionGemma.",
+      "id": "method:interpretable token bottleneck"
+    },
+    {
+      "type": "Claim",
+      "label": "Expert calibration is sufficient to ensure calibration of the overall model under a broad class of distribution shifts in hard-routed models.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "We show that expert calibration is sufficient to ensure calibration of the overall model under a broad class of distribution shifts in hard-routed models",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20544v1",
+      "id": "claim:arxiv:2606.20544v1:0"
+    },
+    {
+      "type": "Claim",
+      "label": "Expert calibration is insufficient for calibrating soft-routed models under distribution shift.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "but is insufficient for calibrating soft-routed models",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20544v1",
+      "id": "claim:arxiv:2606.20544v1:1"
+    },
+    {
+      "type": "Claim",
+      "label": "An adversarial reweighting that penalizes calibration errors of the routed aggregate under distribution shift improves the accuracy-calibration tradeoff both on average and on difficult subsets of the data.",
+      "aliases": [],
+      "claim_type": "methodological",
+      "confidence": "explicit",
+      "evidence": "To address this, we propose an adversarial reweighting that penalizes calibration errors of the routed aggregate under distribution shift, and we demonstrate that it improves the accuracy-calibration tradeoff both on average and on difficult subsets of the data",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20544v1",
+      "id": "claim:arxiv:2606.20544v1:2"
+    },
+    {
+      "type": "Method",
+      "label": "Adversarial Reweighting",
+      "aliases": [],
+      "role": "introduced",
+      "description": "A technique that penalizes calibration errors of the routed aggregate under distribution shift.",
+      "id": "method:adversarial reweighting"
+    },
+    {
+      "type": "Claim",
+      "label": "Style tokens have lower temporal variance than content/function tokens, confirming global conditioning.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "Results show: (1) style tokens have lower temporal variance than content/function tokens, confirming global conditioning;",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20532v1",
+      "id": "claim:arxiv:2606.20532v1:0"
+    },
+    {
+      "type": "Claim",
+      "label": "Style attention correlates with F0 and energy.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "Results show: (2) style attention correlates with F0 and energy;",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20532v1",
+      "id": "claim:arxiv:2606.20532v1:1"
+    },
+    {
+      "type": "Claim",
+      "label": "Style conditioning peaks in early steps and deep layers.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "Results show: (3) style conditioning peaks in early steps and deep layers;",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20532v1",
+      "id": "claim:arxiv:2606.20532v1:2"
+    },
+    {
+      "type": "Claim",
+      "label": "Attention entropy reaches its minimum at layer 17, co-occurring with the style importance peak, indicating maximal network selectivity at the most style-critical stage.",
+      "aliases": [],
+      "claim_type": "empirical",
+      "confidence": "explicit",
+      "evidence": "Results show: (4) attention entropy reaches its minimum at layer 17, co-occurring with the style importance peak, indicating maximal network selectivity at the most style-critical stage.",
+      "section": "Abstract",
+      "paper_id": "arxiv:2606.20532v1",
+      "id": "claim:arxiv:2606.20532v1:3"
+    },
+    {
+      "type": "Method",
+      "label": "Cross-attention attribution for speech diffusion models",
+      "aliases": [],
+      "role": "introduced",
+      "description": "Adapting the DAAM framework to the speech domain for the first time, and applying it to CapSpeech-TTS.",
+      "id": "method:cross attention attribution for speech diffusion models"
+    },
+    {
+      "type": "Dataset",
+      "label": "3,600 (style caption, text transcript) combinations",
+      "aliases": [],
+      "purpose": "Analyzing how caption tokens shape waveforms",
+      "id": "dataset:3 600 style caption text transcript combinations"
+    }
+  ],
+  "links": [
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.11189v1",
+      "target": "claim:arxiv:2606.11189v1:0"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.11189v1",
+      "target": "claim:arxiv:2606.11189v1:1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.11189v1",
+      "target": "claim:arxiv:2606.11189v1:2"
+    },
+    {
+      "type": "INTRODUCES",
+      "section": "4 Q-Target Framework for SFT",
+      "source": "paper:arxiv:2606.11189v1",
+      "target": "method:q target framework"
+    },
+    {
+      "type": "INTRODUCES",
+      "section": "4 Q-Target Framework for SFT",
+      "source": "paper:arxiv:2606.11189v1",
+      "target": "method:target sft"
+    },
+    {
+      "type": "USES",
+      "section": "1 Introduction",
+      "source": "paper:arxiv:2606.11189v1",
+      "target": "method:standard sft"
+    },
+    {
+      "type": "USES",
+      "section": "7.2 Main Results",
+      "source": "paper:arxiv:2606.11189v1",
+      "target": "method:knowledge distillation"
+    },
+    {
+      "type": "EVALUATES_ON",
+      "section": "7.2 Main Results",
+      "metric": "Average@16 accuracy",
+      "value": "highest",
+      "baseline": "SFT, SFT (p-loss), Knowledge Distillation",
+      "source": "paper:arxiv:2606.11189v1",
+      "target": "dataset:numinamath cot"
+    },
+    {
+      "type": "EVALUATES_ON",
+      "section": "7.2 Main Results",
+      "metric": "Average@16 accuracy",
+      "value": "highest",
+      "baseline": "SFT, SFT (p-loss), Knowledge Distillation",
+      "source": "paper:arxiv:2606.11189v1",
+      "target": "dataset:openr1 15k"
+    },
+    {
+      "type": "EVALUATES_ON",
+      "section": "7.2 Main Results",
+      "metric": "Average@16 accuracy",
+      "value": "highest",
+      "baseline": "SFT, SFT (p-loss), Knowledge Distillation",
+      "source": "paper:arxiv:2606.11189v1",
+      "target": "dataset:m23k"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:tong xie",
+      "target": "paper:arxiv:2606.11189v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:yuanhao ban",
+      "target": "paper:arxiv:2606.11189v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:yunqi hong",
+      "target": "paper:arxiv:2606.11189v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:sohyun an",
+      "target": "paper:arxiv:2606.11189v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:yihang chen",
+      "target": "paper:arxiv:2606.11189v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:cho jui hsieh",
+      "target": "paper:arxiv:2606.11189v1"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:dac3a172b504f4e33c029655e9befb3386e5f63a"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:bd1331b233e84bab7eba503abc60b31ac08e7881"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:b21670e8061a06ab97e7d6052c9345a326e84ff8"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:094ff971d6a8b8ff870946c9b3ce5aa173617bfb"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:341bdbcfc3febef7691a97c216ad394653211095"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:cb5e3f085caefd1f3d5e08637ab55d39e61234fc"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:23dd78e424d32f6a48660dcd67ce994b8a7db8be"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:5f19ae1135a9500940978104ec15a5b8751bc7d2"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:a376e6b118a10a8cb8a2920f6b83a70f087579f5"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:0f733817e82026f7c29909a51cb4df7d2685f0e7"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:d766bffc357127e0dc86dd69561d5aeb520d6f4c"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:f4df78183261538e718066331898ee5cad7cad05"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:2fea588313c899ac512bb90f77b7ce9d31db421d"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:03488f1a193066b5ea8b9b800e119f07df5c1d9e"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:b3848d32f7294ec708627897833c4097eb4d8778"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:07283e1578a50e15ac66efcc35b4ae0cbf2159ef"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:4081aeb7ff148cc4678efca4e44a72dece4542e3"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:0bc8eae192dbd489f8857c0f6c03cc491f72d396"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:68f141724814839d556a989646194be88641b143"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:92173d081b15824d22a9ef070e118744ceee8052"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:9a258f42e333ed5ff79037724eb01747ede0bb49"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:d6045d2ccc9c09ca1671348de86d07da6bc28eea"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:17dd3555fd1ccf1141cf984347fa1b3fd6b009ca"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:d3640eb3b542eaf36fee2261f037a6bf0d8eac9c"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:e55391a9406245584b3e5b3225dad2e171b9a06b"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:7a79a3074e736bdd9e4ce1d46f1efe3abd6623fd"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:4698fc4712f0212c8a3810fd67b41ee8b8896aba"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:0f2199296f01694ee46b6059879260fb80a84fa6"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:ff0b2681d7b05e16c46dfb71d980cc2f605907cd"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:934bdb14923510a2dedd3682a3f2c89f7e1ab364"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:a38e0f993e4805ba8a9beae4c275c91ffcec01df"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:28692beece311a90f5fa1ca2ec9d0c2ce293d069"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:acbdbf49f9bc3f151b93d9ca9a06009f4f6eb269"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:d65a064eb837f838faf6ff67781b62450b92b159"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:57a1258571a21817d89197dc84c986861fb6e580"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:82deb8df3f3c765a4a84dc072cf2a20ecaefa420"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:911b7539e964782670e555930b291de16fa971c5"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:ffdbd7f0b03b85747b001b4734d5ee31b5229aa4"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:21ec9c0f869bdb33b06c7dbc8880169db0397d08"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:3aba582b62d1abfcd95264e6c7b32aab4c9db4b8"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:446c591f913e266ccaba5684c4f5235f4b6e65d7"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:a9fe5bd8da2d9603cf2cf6c6ea8b0f83c6d3a4f9"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:13c4e5a6122f3fa2663f63e49537091da6532f35"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:57d1e7ac339e783898f2c3b1af55737cbeee9fc5"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:d7ac65d335b5d847f4f5826313a8732bc7abc7a8"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:ac3cdb50606f7770eef8e4cd951840a4f71287a0"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:5b6c582d51266be9aa7e32bfdc20891e5231eca4"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:346081161bdc8f18e2a4c4af7f51d35452b5cb01"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:343e06bae852f74a98573e798b501f6003bcb1c0"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:a381826827df23f11c0dc600e1d7445fe4fa7e7c"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:f13e41d24e5d0a68ca662c1b49de398a6fb68251"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:f4874bd968b785cb9fceeccf26c333567a2b8dca"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:f56fc41eff96afbc64030ce5e97d444706e4997c"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:af7307c05027fb6c5e907cdcb29af0b149db7056"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:90abbc2cf38462b954ae1b772fac9532e2ccd8b0"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:dbeeca8466e0c177ec67c60d529899232415ca87"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:b9a5aa5db8836744ff2073e8368520b7a614049f"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:b2a839e3ee68e81b863b73ee08c6626c94477fef"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:3dd61d97827e3f380bf9304101149a3f865051fc"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:9e12539d92088001e08b1e903c490127c479de4c"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:e6c561d02500b2596a230b341a8eb8b921ca5bf2"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:6c4b76232bb72897685d19b3d264c6ee3005bc2b"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:730043364aed106241ef18ab3e3b5e316802a254"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:52fa450740913a6cdcb4d9395b45e203f46cab79"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:b285c067f2da04bf5647beb8853bfddf6d9b4e1b"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:874e9318c09c711ecd48a903b3824a3a03e2cd62"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:eef7cfe8267954adbb4675576072a1d80ca7a3a8"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:3a6447361b20c249f5306ae17dee43f645430e31"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:c242438dac5aa4d9b13766c14240bb8426690d58"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:f67ede490780f939103d4cc4e9c6866b83ee59b3"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:b5246fa284f86b544a7c31f050b3bd0defd053fd"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:94f3b096ff2969aed0c6e0cae195d8fba27858cf"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:3febb2bed8865945e7fddc99efd791887bb7e14f"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:e854977a9c4c2effc42f2e24064726fb6307b6f5"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:b123a0d46ad917b79c43c5ae981e03ed2458ed11"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:6b024162f81e8ff7aa34c3a43d601a912d012c78"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:4c6fe6179c408e1fbb3871af13d1a8e64f766e54"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:2bdbb07bc12b8d8c332b7a84aa05e76218c07cd9"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:17230f5b3956188055a48c5f4f61d131cce0662f"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:187c25de08261760cf48b4e9dabf308d2f7f15d9"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:0d0b3ff23fbf1ec7a0dfebd923a3ef224306491a"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:a7862e14b4c20cefd6dc4f611f8aa866fabf130b"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:99feb14a76ea4750818d5af0aa9082dfda47a587"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:bd87757bec32839742d676442dde389fce68764c"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:ec64e324ce1210fe5245dfd0fb5a92058732e5b9"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:f40aeae3e522ada1f6a9f326841b01ef5c8657b6"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:e811e771f5950d86eafe50655c0d1e5b571e19b6"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:53d8b356551a2361020a948f64454a6d599af69f"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:c89d5766d25466830391ccecabe53e0bf2a92425"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:e52e5e8b4d798a4a256ee34b528e350eddea9ccf"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:43bafb4997515d2904abfca8214f2fc806680fc3"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:c21a4d70d83e0f6eb2a9e1c41d034842dd561e47"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:df2b0e26d0599ce3e70df8a9da02e51594e0e992"
+    },
+    {
+      "type": "CITES",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "paper:99fe982dce046869f60e4552c7f91c3627304780"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "claim:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5:0"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "claim:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5:1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "claim:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5:2"
+    },
+    {
+      "type": "INTRODUCES",
+      "section": "Abstract",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "method:chain of thought prompting"
+    },
+    {
+      "type": "EVALUATES_ON",
+      "section": "Abstract",
+      "metric": "Accuracy",
+      "value": "state of the art",
+      "baseline": "finetuned GPT-3 with a verifier",
+      "source": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "target": "dataset:gsm8k"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:jason wei",
+      "target": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:xuezhi wang",
+      "target": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:dale schuurmans",
+      "target": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:maarten bosma",
+      "target": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:ed h chi",
+      "target": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:f xia",
+      "target": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:quoc le",
+      "target": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:denny zhou",
+      "target": "paper:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19328v1",
+      "target": "claim:arxiv:2606.19328v1:0"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19328v1",
+      "target": "claim:arxiv:2606.19328v1:1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19328v1",
+      "target": "claim:arxiv:2606.19328v1:2"
+    },
+    {
+      "type": "INTRODUCES",
+      "section": "Abstract",
+      "source": "paper:arxiv:2606.19328v1",
+      "target": "method:uncertainty balanced preference planning ubp2"
+    },
+    {
+      "type": "EVALUATES_ON",
+      "section": "Abstract",
+      "metric": "Sample efficiency",
+      "value": "substantially higher",
+      "baseline": "model-free preference-based methods and non-optimistic model-based baselines",
+      "source": "paper:arxiv:2606.19328v1",
+      "target": "dataset:meta world"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:mohamed nabail",
+      "target": "paper:arxiv:2606.19328v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:leo cheng",
+      "target": "paper:arxiv:2606.19328v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:jingmin wang",
+      "target": "paper:arxiv:2606.19328v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:nicholas rhinehart",
+      "target": "paper:arxiv:2606.19328v1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19327v1",
+      "target": "claim:arxiv:2606.19327v1:0"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19327v1",
+      "target": "claim:arxiv:2606.19327v1:1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19327v1",
+      "target": "claim:arxiv:2606.19327v1:2"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19327v1",
+      "target": "claim:arxiv:2606.19327v1:3"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19327v1",
+      "target": "claim:arxiv:2606.19327v1:4"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19327v1",
+      "target": "claim:arxiv:2606.19327v1:5"
+    },
+    {
+      "type": "INTRODUCES",
+      "section": "Abstract",
+      "source": "paper:arxiv:2606.19327v1",
+      "target": "method:rubric conditioned self distillation"
+    },
+    {
+      "type": "EVALUATES_ON",
+      "section": "Abstract",
+      "metric": "Average performance",
+      "value": "0.9 points higher than OPSD",
+      "baseline": "OPSD",
+      "source": "paper:arxiv:2606.19327v1",
+      "target": "dataset:diverse suite of science reasoning benchmarks"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:siyi gu",
+      "target": "paper:arxiv:2606.19327v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:jialin chen",
+      "target": "paper:arxiv:2606.19327v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:sophia zhou",
+      "target": "paper:arxiv:2606.19327v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:arman cohan",
+      "target": "paper:arxiv:2606.19327v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:rex ying",
+      "target": "paper:arxiv:2606.19327v1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19325v1",
+      "target": "claim:arxiv:2606.19325v1:0"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19325v1",
+      "target": "claim:arxiv:2606.19325v1:1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19325v1",
+      "target": "claim:arxiv:2606.19325v1:2"
+    },
+    {
+      "type": "INTRODUCES",
+      "section": "Abstract",
+      "source": "paper:arxiv:2606.19325v1",
+      "target": "method:scena"
+    },
+    {
+      "type": "INTRODUCES",
+      "section": "Abstract",
+      "source": "paper:arxiv:2606.19325v1",
+      "target": "method:high noise biased timestep distribution"
+    },
+    {
+      "type": "EVALUATES_ON",
+      "section": "Abstract",
+      "metric": "speaker-binding metrics",
+      "value": "outperforms existing multi-speaker systems",
+      "baseline": "existing multi-speaker systems",
+      "source": "paper:arxiv:2606.19325v1",
+      "target": "dataset:covomix2 dialogue"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:michael finkelson",
+      "target": "paper:arxiv:2606.19325v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:daniel segal",
+      "target": "paper:arxiv:2606.19325v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:eitan richardson",
+      "target": "paper:arxiv:2606.19325v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:shahar armon",
+      "target": "paper:arxiv:2606.19325v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:nani goldring",
+      "target": "paper:arxiv:2606.19325v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:poriya panet",
+      "target": "paper:arxiv:2606.19325v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:nir zabari",
+      "target": "paper:arxiv:2606.19325v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:benjamin brazowski",
+      "target": "paper:arxiv:2606.19325v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:or patashnik",
+      "target": "paper:arxiv:2606.19325v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:yoav hacohen",
+      "target": "paper:arxiv:2606.19325v1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19319v1",
+      "target": "claim:arxiv:2606.19319v1:0"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19319v1",
+      "target": "claim:arxiv:2606.19319v1:1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19319v1",
+      "target": "claim:arxiv:2606.19319v1:2"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19319v1",
+      "target": "claim:arxiv:2606.19319v1:3"
+    },
+    {
+      "type": "INTRODUCES",
+      "section": "Abstract",
+      "source": "paper:arxiv:2606.19319v1",
+      "target": "method:data intelligence agents dia"
+    },
+    {
+      "type": "INTRODUCES",
+      "section": "Abstract",
+      "source": "paper:arxiv:2606.19319v1",
+      "target": "method:query generator"
+    },
+    {
+      "type": "EVALUATES_ON",
+      "section": "Abstract",
+      "metric": "Performance on SQL benchmarks",
+      "value": "matches or surpasses the best published results",
+      "baseline": "Best published results",
+      "source": "paper:arxiv:2606.19319v1",
+      "target": "dataset:seven sql benchmarks"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:anoushka vyas",
+      "target": "paper:arxiv:2606.19319v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:aarushi dhanuka",
+      "target": "paper:arxiv:2606.19319v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:sina khoshfetrat pakazad",
+      "target": "paper:arxiv:2606.19319v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:henrik ohlsson",
+      "target": "paper:arxiv:2606.19319v1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19317v1",
+      "target": "claim:arxiv:2606.19317v1:0"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19317v1",
+      "target": "claim:arxiv:2606.19317v1:1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.19317v1",
+      "target": "claim:arxiv:2606.19317v1:2"
+    },
+    {
+      "type": "INTRODUCES",
+      "section": "Abstract",
+      "source": "paper:arxiv:2606.19317v1",
+      "target": "method:program synthesis for attention heads"
+    },
+    {
+      "type": "EVALUATES_ON",
+      "section": "Abstract",
+      "metric": "Intersection-over-Union similarity",
+      "value": "above 75%",
+      "baseline": null,
+      "source": "paper:arxiv:2606.19317v1",
+      "target": "dataset:tinystories"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:amiri hayes",
+      "target": "paper:arxiv:2606.19317v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:belinda li",
+      "target": "paper:arxiv:2606.19317v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:jacob andreas",
+      "target": "paper:arxiv:2606.19317v1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20560v1",
+      "target": "claim:arxiv:2606.20560v1:0"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20560v1",
+      "target": "claim:arxiv:2606.20560v1:1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20560v1",
+      "target": "claim:arxiv:2606.20560v1:2"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20560v1",
+      "target": "claim:arxiv:2606.20560v1:3"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20560v1",
+      "target": "claim:arxiv:2606.20560v1:4"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20560v1",
+      "target": "claim:arxiv:2606.20560v1:5"
+    },
+    {
+      "type": "USES",
+      "section": "Abstract",
+      "source": "paper:arxiv:2606.20560v1",
+      "target": "method:diffusiongemma"
+    },
+    {
+      "type": "USES",
+      "section": "Abstract",
+      "source": "paper:arxiv:2606.20560v1",
+      "target": "method:gemma 4"
+    },
+    {
+      "type": "INTRODUCES",
+      "section": "Abstract",
+      "source": "paper:arxiv:2606.20560v1",
+      "target": "method:interpretable token bottleneck"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:joshua engels",
+      "target": "paper:arxiv:2606.20560v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:callum mcdougall",
+      "target": "paper:arxiv:2606.20560v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:bilal chughtai",
+      "target": "paper:arxiv:2606.20560v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:janos kramar",
+      "target": "paper:arxiv:2606.20560v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:senthoran rajamanoharan",
+      "target": "paper:arxiv:2606.20560v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:cindy wu",
+      "target": "paper:arxiv:2606.20560v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:arthur conmy",
+      "target": "paper:arxiv:2606.20560v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:asic q chen",
+      "target": "paper:arxiv:2606.20560v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:jean tarbouriech",
+      "target": "paper:arxiv:2606.20560v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:min ma",
+      "target": "paper:arxiv:2606.20560v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:brendan o donoghue",
+      "target": "paper:arxiv:2606.20560v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:jo o gabriel lopes de oliveira",
+      "target": "paper:arxiv:2606.20560v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:rohin shah",
+      "target": "paper:arxiv:2606.20560v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:neel nanda",
+      "target": "paper:arxiv:2606.20560v1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20554v1",
+      "target": "claim:arxiv:2606.20554v1:0"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20554v1",
+      "target": "claim:arxiv:2606.20554v1:1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20554v1",
+      "target": "claim:arxiv:2606.20554v1:2"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20554v1",
+      "target": "claim:arxiv:2606.20554v1:3"
+    },
+    {
+      "type": "INTRODUCES",
+      "section": "Abstract",
+      "source": "paper:arxiv:2606.20554v1",
+      "target": "method:g2rec"
+    },
+    {
+      "type": "EVALUATES_ON",
+      "section": "Abstract",
+      "source": "paper:arxiv:2606.20554v1",
+      "target": "dataset:public datasets"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:ruizhong qiu",
+      "target": "paper:arxiv:2606.20554v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:yinglong xia",
+      "target": "paper:arxiv:2606.20554v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:dongqi fu",
+      "target": "paper:arxiv:2606.20554v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:hanqing zeng",
+      "target": "paper:arxiv:2606.20554v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:ren chen",
+      "target": "paper:arxiv:2606.20554v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:xiangjun fan",
+      "target": "paper:arxiv:2606.20554v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:hong li",
+      "target": "paper:arxiv:2606.20554v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:hong yan",
+      "target": "paper:arxiv:2606.20554v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:hanghang tong",
+      "target": "paper:arxiv:2606.20554v1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20544v1",
+      "target": "claim:arxiv:2606.20544v1:0"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20544v1",
+      "target": "claim:arxiv:2606.20544v1:1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20544v1",
+      "target": "claim:arxiv:2606.20544v1:2"
+    },
+    {
+      "type": "INTRODUCES",
+      "section": "Abstract",
+      "source": "paper:arxiv:2606.20544v1",
+      "target": "method:adversarial reweighting"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:gina wong",
+      "target": "paper:arxiv:2606.20544v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:drew prinster",
+      "target": "paper:arxiv:2606.20544v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:suchi saria",
+      "target": "paper:arxiv:2606.20544v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:rama chellappa",
+      "target": "paper:arxiv:2606.20544v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:anqi liu",
+      "target": "paper:arxiv:2606.20544v1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20532v1",
+      "target": "claim:arxiv:2606.20532v1:0"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20532v1",
+      "target": "claim:arxiv:2606.20532v1:1"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20532v1",
+      "target": "claim:arxiv:2606.20532v1:2"
+    },
+    {
+      "type": "MAKES_CLAIM",
+      "source": "paper:arxiv:2606.20532v1",
+      "target": "claim:arxiv:2606.20532v1:3"
+    },
+    {
+      "type": "INTRODUCES",
+      "section": "Abstract",
+      "source": "paper:arxiv:2606.20532v1",
+      "target": "method:cross attention attribution for speech diffusion models"
+    },
+    {
+      "type": "EVALUATES_ON",
+      "section": "Abstract",
+      "source": "paper:arxiv:2606.20532v1",
+      "target": "dataset:3 600 style caption text transcript combinations"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:nityanand mathur",
+      "target": "paper:arxiv:2606.20532v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:hamees sayed",
+      "target": "paper:arxiv:2606.20532v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:wasim madha",
+      "target": "paper:arxiv:2606.20532v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:apoorv singh",
+      "target": "paper:arxiv:2606.20532v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:sameer khurana",
+      "target": "paper:arxiv:2606.20532v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:akshat mandloi",
+      "target": "paper:arxiv:2606.20532v1"
+    },
+    {
+      "type": "AUTHORED",
+      "source": "author:sudarshan kamath",
+      "target": "paper:arxiv:2606.20532v1"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5:0",
+      "target": "method:chain of thought prompting"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5:1",
+      "target": "method:chain of thought prompting"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:semantic_scholar:1b6e810ce0afd0dd093f789d2b2742d047e316d5:2",
+      "target": "dataset:gsm8k"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.11189v1:0",
+      "target": "method:target sft"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.11189v1:1",
+      "target": "method:q target framework"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.11189v1:2",
+      "target": "method:target sft"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.19328v1:0",
+      "target": "dataset:meta world"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.19328v1:1",
+      "target": "method:uncertainty balanced preference planning ubp2"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.19327v1:2",
+      "target": "method:rubric conditioned self distillation"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.19327v1:3",
+      "target": "method:rubric conditioned self distillation"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.19327v1:4",
+      "target": "method:rubric conditioned self distillation"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.19327v1:5",
+      "target": "method:rubric conditioned self distillation"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.19327v1:5",
+      "target": "dataset:diverse suite of science reasoning benchmarks"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.19325v1:0",
+      "target": "method:scena"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.19325v1:0",
+      "target": "dataset:covomix2 dialogue"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.19325v1:2",
+      "target": "method:high noise biased timestep distribution"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.19319v1:0",
+      "target": "method:data intelligence agents dia"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.19319v1:2",
+      "target": "method:query generator"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.19319v1:2",
+      "target": "dataset:seven sql benchmarks"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.19317v1:0",
+      "target": "dataset:tinystories"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.20554v1:0",
+      "target": "method:g2rec"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.20554v1:1",
+      "target": "method:g2rec"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.20554v1:2",
+      "target": "method:g2rec"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.20554v1:3",
+      "target": "method:g2rec"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.20554v1:3",
+      "target": "dataset:public datasets"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.20560v1:0",
+      "target": "method:diffusiongemma"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.20560v1:0",
+      "target": "method:gemma 4"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.20560v1:1",
+      "target": "method:interpretable token bottleneck"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.20560v1:2",
+      "target": "method:diffusiongemma"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.20560v1:2",
+      "target": "method:gemma 4"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.20560v1:4",
+      "target": "method:diffusiongemma"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.20560v1:5",
+      "target": "method:diffusiongemma"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.20560v1:5",
+      "target": "method:gemma 4"
+    },
+    {
+      "type": "ABOUT",
+      "source": "claim:arxiv:2606.20544v1:2",
+      "target": "method:adversarial reweighting"
+    }
+  ]
+}
