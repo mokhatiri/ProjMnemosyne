@@ -28,6 +28,7 @@ Each layer is a self-contained Python package. The folder number matches the
 | [`frontend/`](frontend/) | — | Web console | Vue 3 + Vite single-page app (overview dashboard, search/graph/agents/insights views, live analyst control) served by a stdlib HTTP server over Layers 4–6 + the analyst | (serves HTTP) |
 | [`pipeline/`](pipeline/) | — | Orchestrator | Runs every layer end-to-end, then launches the frontend | (drives the above) |
 | [`analyst/`](analyst/) | — | Autonomous analyst | Self-directed loop: picks targets, runs the agents, banks ranked insights | `storage/insights.jsonl` |
+| [`evaluation/`](evaluation/) | — | Retrieval evaluation | Offline recall@k / MRR of the vector index (unit → source paper) | (prints a report) |
 
 Data flows **down** the table; every layer reads the append-only JSONL the
 previous layers wrote in `storage/`.
@@ -174,6 +175,36 @@ python -m frontend                          # http://127.0.0.1:8000
 
 Append `--offline` to the L4/L5/L6/frontend commands to force the stub reasoner
 (no `HF_TOKEN` needed). All write-producing steps are idempotent / append-only.
+
+## Evaluation (retrieval quality)
+
+`python -m evaluation` measures how well the Layer 3-1 index finds the right
+paper. It is offline (reads `storage/vectors.npy` + `chunks.jsonl`, no API
+calls) and deterministic.
+
+**Task: unit → source paper.** Each extracted unit (claim, method, result,
+dataset, assumption, limitation) is used as a query against the paper-level
+index (`kind="abstract"`) through the store's own `search()`; a query is
+correct when its source paper comes back. No hand labels are needed: the
+extraction already records which paper each unit came from.
+
+Result on the June 2026 store (voyage-3, 11 indexed papers, 123 units):
+
+| Metric | Score | Random ranking |
+|--------|-------|----------------|
+| recall@1 | 0.902 | 0.091 |
+| recall@5 | 0.967 | 0.455 |
+| MRR | 0.935 | 0.275 |
+
+Per kind, claims, methods, results and limitations reach recall@5 = 1.0;
+dataset units are the weak spot (recall@5 = 0.727, MRR = 0.583) because a
+dataset line such as "NuminaMath-CoT: training and evaluation for mathematical
+reasoning" fits several papers equally well.
+
+Read it with its limits: only 11 candidate papers (a small, easy pool), and
+queries reuse document-side embeddings, whereas live `search()` embeds queries
+with `input_type="query"`. Re-run after indexing more papers to see how it
+holds up on a larger pool. Tests: `python -m unittest discover tests`.
 
 ## Connecting Layer 4 to an MCP client
 
