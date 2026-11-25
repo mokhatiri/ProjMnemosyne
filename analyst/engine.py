@@ -30,6 +30,7 @@ from dataclasses import asdict
 from typing import Dict, List, Optional, Set
 
 import layer5   # normal import (no hyphen): the analytical agents
+import verifier  # deterministic checks run before an insight is banked
 
 from .config import Config
 from . import worklist
@@ -71,9 +72,12 @@ class AnalysisEngine:
             json.dump({"iteration": iteration, "done_task_ids": sorted(done)}, fh, indent=2)
 
     def _known_insight_ids(self) -> Set[str]:
+        """Ids already banked or already rejected (so neither is redone)."""
         ids: Set[str] = set()
-        if os.path.exists(self.config.insights_path):
-            with open(self.config.insights_path, encoding="utf-8") as fh:
+        for path in (self.config.insights_path, self.config.rejected_path):
+            if not os.path.exists(path):
+                continue
+            with open(path, encoding="utf-8") as fh:
                 for line in fh:
                     line = line.strip()
                     if line:
@@ -83,11 +87,27 @@ class AnalysisEngine:
                             pass
         return ids
 
-    def _append_insights(self, insights: List[dict]) -> None:
+    def _load_gate(self):
+        """(corpus, pairs of the already banked insights that pass), or
+        (None, None) when the gate is off or the corpus is not indexed yet."""
+        if not self.config.verify:
+            return None, None
+        try:
+            corpus = verifier.Corpus.load(self.config.corpus_storage_path)
+        except FileNotFoundError:
+            logger.warning("verification skipped: no chunks.jsonl yet (run layer3-1 index)")
+            return None, None
+        seen: Set[tuple] = set()
+        if os.path.exists(self.config.insights_path):
+            with open(self.config.insights_path, encoding="utf-8") as fh:
+                verifier.check_all([json.loads(l) for l in fh if l.strip()], corpus, seen)
+        return corpus, seen
+
+    def _append_insights(self, insights: List[dict], path: Optional[str] = None) -> None:
         if not insights:
             return
         os.makedirs(self.config.local_storage_path, exist_ok=True)
-        with open(self.config.insights_path, "a", encoding="utf-8") as fh:
+        with open(path or self.config.insights_path, "a", encoding="utf-8") as fh:
             for ins in insights:
                 fh.write(json.dumps(ins, ensure_ascii=False) + "\n")
 
@@ -107,6 +127,8 @@ class AnalysisEngine:
         batch = pending[: self.config.batch_size]
 
         new_insights: List[dict] = []
+        rejected: List[dict] = []
+        corpus, seen = self._load_gate()
         for task in batch:
             try:
                 findings = layer5.run_agent(task.agent, topic=task.topic,
@@ -123,12 +145,23 @@ class AnalysisEngine:
                 known_ids.add(d["id"])
                 d["_score"] = self._score(d)
                 d["_first_seen_generation"] = iteration
+                if corpus is not None:
+                    v = verifier.check(d, corpus, seen)
+                    d["_verified"] = v.passed
+                    if v.warnings:
+                        d["_warnings"] = v.warnings
+                    if not v.passed:
+                        d["_errors"] = v.errors
+                        rejected.append(d)
+                        continue
                 new_insights.append(d)
             done.add(task.id)
 
         self._append_insights(new_insights)
+        self._append_insights(rejected, self.config.rejected_path)
         return {"ran": len(batch), "pending_after": len(pending) - len(batch),
-                "new_insights": len(new_insights), "total_tasks": len(tasks)}
+                "new_insights": len(new_insights), "rejected": len(rejected),
+                "total_tasks": len(tasks)}
 
     # --- the loop --------------------------------------------------------------
     def run(self, iterations: Optional[int] = None, interval: Optional[int] = None,
@@ -143,7 +176,7 @@ class AnalysisEngine:
         print(f"autonomous analyst starting (offline={self.offline}, "
               f"interval={interval}s, batch={self.config.batch_size}). "
               f"Resuming at generation {gen}; {len(done)} task(s) already done, "
-              f"{len(known_ids)} insight(s) banked. Ctrl+C to stop.")
+              f"{len(known_ids)} insight(s) seen (banked + rejected). Ctrl+C to stop.")
 
         completed = 0
         try:
@@ -155,10 +188,11 @@ class AnalysisEngine:
                 summary = self.tick(gen, done, known_ids)
                 self._save_state(gen, done)
                 print(f"\n[gen {gen}] ran {summary['ran']} task(s), "
-                      f"{summary['new_insights']} new insight(s); "
+                      f"{summary['new_insights']} new insight(s), "
+                      f"{summary['rejected']} rejected by the verifier; "
                       f"{summary['pending_after']} task(s) pending "
                       f"(of {summary['total_tasks']}); "
-                      f"{len(known_ids)} insight(s) banked total.")
+                      f"{len(known_ids)} insight(s) seen so far (banked + rejected).")
 
                 # nothing left and not growing the corpus -> the analyst is done
                 if summary["pending_after"] == 0 and not grow:

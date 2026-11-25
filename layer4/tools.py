@@ -171,6 +171,22 @@ def _search(query: str, kind: Optional[str], k: int,
         return _keyword_search(query, kind, k, filters), "keyword"
 
 
+def _spread_across_papers(hits: List[Dict[str, Any]], k: int) -> List[Dict[str, Any]]:
+    """Keep the ranking order but take hits round-robin by paper (best hit of
+    each paper first, then second-best, ...), up to k."""
+    by_paper: Dict[str, List[Dict[str, Any]]] = {}
+    for h in hits:
+        by_paper.setdefault(h["paper_id"], []).append(h)
+    out: List[Dict[str, Any]] = []
+    depth = 0
+    while len(out) < k and any(len(v) > depth for v in by_paper.values()):
+        for group in by_paper.values():   # dicts keep first-seen (= rank) order
+            if depth < len(group) and len(out) < k:
+                out.append(group[depth])
+        depth += 1
+    return out
+
+
 def _snippet(text: str, n: int = 200) -> str:
     s = " ".join(text.split())
     return s if len(s) <= n else s[:n] + "..."
@@ -252,11 +268,18 @@ def detect_contradictions(topic: str, k: int = 8) -> Dict[str, Any]:
     the reasoning model to flag pairs that genuinely contradict each other.
     Returns the candidate claims considered and any contradictions found.
     """
-    hits, mode = _search(topic, kind="claim", k=k)
+    # Over-fetch, then interleave papers: the plain top-k is often dominated by
+    # one paper, which leaves the reasoner only same-paper pairs to judge.
+    hits, mode = _search(topic, kind="claim", k=k * 3)
+    hits = _spread_across_papers(hits, k)
     claims = [{"chunk_id": h["chunk_id"], "paper_id": h["paper_id"],
                "statement": h["text"],
                "claim_type": h["metadata"].get("claim_type")} for h in hits]
     found = _reasoner().find_contradictions(topic, claims) if claims else []
+    # a contradiction is between papers; same-paper "tensions" are dropped
+    found = [c for c in found
+             if (c.get("claim_a") or {}).get("paper_id")
+             != (c.get("claim_b") or {}).get("paper_id")]
     return {
         "topic": topic, "match": mode, "reasoner": _reasoner().model_name,
         "candidates_considered": len(claims),

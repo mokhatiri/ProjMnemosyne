@@ -28,6 +28,8 @@ Each layer is a self-contained Python package. The folder number matches the
 | [`frontend/`](frontend/) | — | Web console | Vue 3 + Vite single-page app (overview dashboard, search/graph/agents/insights views, live analyst control) served by a stdlib HTTP server over Layers 4–6 + the analyst | (serves HTTP) |
 | [`pipeline/`](pipeline/) | — | Orchestrator | Runs every layer end-to-end, then launches the frontend | (drives the above) |
 | [`analyst/`](analyst/) | — | Autonomous analyst | Self-directed loop: picks targets, runs the agents, banks ranked insights | `storage/insights.jsonl` |
+| [`verifier/`](verifier/) | — | Insight verification | Deterministic checks that an insight stands on the corpus; the analyst's gate before banking | `storage/rejected_insights.jsonl` |
+| [`evaluation/`](evaluation/) | — | Retrieval evaluation | Offline recall@k / MRR of the vector index (unit → source paper) | (prints a report) |
 
 Data flows **down** the table; every layer reads the append-only JSONL the
 previous layers wrote in `storage/`.
@@ -174,6 +176,122 @@ python -m frontend                          # http://127.0.0.1:8000
 
 Append `--offline` to the L4/L5/L6/frontend commands to force the stub reasoner
 (no `HF_TOKEN` needed). All write-producing steps are idempotent / append-only.
+
+## Evaluation (retrieval quality)
+
+`python -m evaluation` measures how well the Layer 3-1 index finds the right
+paper. It is offline (reads `storage/vectors.npy` + `chunks.jsonl`, no API
+calls) and deterministic.
+
+**Task: unit → source paper.** Each extracted unit (claim, method, result,
+dataset, assumption, limitation) is used as a query against the paper-level
+index (`kind="abstract"`) through the store's own `search()`; a query is
+correct when its source paper comes back. No hand labels are needed: the
+extraction already records which paper each unit came from.
+
+Result on the June 2026 store (voyage-3, 11 indexed papers, 123 units):
+
+| Metric | Score | Random ranking |
+|--------|-------|----------------|
+| recall@1 | 0.902 | 0.091 |
+| recall@5 | 0.967 | 0.455 |
+| MRR | 0.935 | 0.275 |
+
+Per kind, claims, methods, results and limitations reach recall@5 = 1.0;
+dataset units are the weak spot (recall@5 = 0.727, MRR = 0.583) because a
+dataset line such as "NuminaMath-CoT: training and evaluation for mathematical
+reasoning" fits several papers equally well.
+
+This offline run has two limits: only 11 candidate papers (a small, easy
+pool), and queries reuse document-side embeddings. The live run below removes
+both.
+
+### Live run: real query embeddings, larger pool, current models
+
+`python -m evaluation.live` rebuilds the index with any Voyage model in its own
+folder (`storage/eval/<model>/`, git-ignored; the committed store is never
+touched), using Layer 3-1's own chunking. It embeds each unit as a real search
+query (`input_type="query"`, the path `search()` takes), and can add recent
+arXiv papers, fetched live through Layer 1's `ArxivFetcher`, as distractors
+in the candidate pool:
+
+```bash
+python -m evaluation.live --model voyage-3 --model voyage-4 --distractors 100 --json storage/eval/results.json
+```
+
+Results, 25 Nov 2026 (123 unit queries; pool = 11 corpus papers + 100 arXiv
+cs.CL/cs.LG/cs.AI papers submitted 24 Nov 2026):
+
+| Model | Pool | recall@1 | recall@5 | MRR |
+|-------|------|----------|----------|-----|
+| voyage-3 | 11 papers | 0.927 | 0.984 | 0.953 |
+| voyage-4 | 11 papers | 0.911 | 0.992 | 0.942 |
+| voyage-3 | 111 papers | 0.886 | 0.935 | 0.912 |
+| voyage-4 | 111 papers | 0.870 | 0.919 | 0.892 |
+| random | 111 papers | 0.009 | 0.045 | 0.048 |
+
+Findings:
+- Ranking stays strong when the pool grows tenfold: MRR drops from 0.95 to
+  0.91 with voyage-3.
+- voyage-4 (Jan 2026) does not beat voyage-3 on this task; the gap is 2 of
+  123 queries, i.e. a tie. There is no reason to re-index for quality.
+- Dataset units are the weak spot (recall@5 0.45 on the 111-paper pool):
+  a dataset name with a one-line purpose fits many recent LLM papers. Adding
+  the paper title, or the sentence that uses the dataset, to the dataset chunk
+  text is the obvious next fix.
+
+Rate limits: without a payment method Voyage allows 3 requests / 10K tokens per
+minute; `evaluation.live` paces its requests and saves after every batch, so
+an interrupted run resumes where it stopped.
+
+### Insight quality: the verifier
+
+The agents let an LLM judge; until Nov 2026 nothing checked a finding before
+the analyst banked it. `verifier/` checks every insight against the corpus it
+cites, without an LLM:
+
+- **traceable**: every cited chunk and paper exists, and each quoted statement
+  matches the stored text;
+- **contradiction**: two different claims from two different papers, not a
+  mirrored duplicate of one already banked;
+- **synergy**: both methods exist in the corpus and come from different papers
+  (same-paper pairs are usually a method and its own component or baseline);
+- **evidence**: the supporting/contradicting counts in the summary match the
+  cited lists, and a "supported" verdict has more support than contradiction;
+- **hypothesis**: every `grounded_in` paper exists and contains the entity it
+  is cited for.
+
+Stub (offline) output is flagged as a warning. `python -m verifier --details`
+reports on `storage/insights.jsonl`. On the June 2026 bank:
+
+| Kind | Banked | Pass | LLM-made and pass |
+|------|--------|------|-------------------|
+| evidence | 21 | 21 | 19 |
+| synergy | 6 | 2 | 2 |
+| hypothesis | 3 | 3 | 3 |
+| contradiction | 5 | 2 | 0 |
+| **all** | **35** | **28 (80%)** | **24 of 31 (77%)** |
+
+Every real contradiction paired two claims from the same paper (one pair was
+banked twice, in both orders), and 4 of 6 synergies joined methods from one
+paper. Three changes follow from that:
+
+1. **Gate in the analyst**: each new finding is verified before banking;
+   failures go to `storage/rejected_insights.jsonl` with their reasons and are
+   not retried (`ANALYST_VERIFY=0` turns the gate off).
+2. **Contradiction candidates span papers**: `detect_contradictions` now
+   over-fetches and interleaves claims by paper before asking the LLM, and
+   drops same-paper pairs it returns.
+3. **Methods know their paper**: graph Method nodes now resolve their paper
+   through INTRODUCES/USES edges (18 of 18, was 0), and the synergy agent
+   skips same-paper pairs.
+
+Limit: the verifier proves an insight is traceable and well-formed, not that
+the judgement is wise. One banked hypothesis applies a diffusion timestep trick
+to chain-of-thought prompting; it passes because every entity it cites exists.
+Judging that needs a reviewer, human or LLM.
+
+Tests: `python -m unittest discover tests`.
 
 ## Connecting Layer 4 to an MCP client
 

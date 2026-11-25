@@ -1,0 +1,184 @@
+[
+  {
+    "model": "voyage-3",
+    "extracted_pool": {
+      "task": "unit -> source paper (live query embeddings)",
+      "queries": 123,
+      "candidates": 11,
+      "recall@1": 0.926829268292683,
+      "recall@5": 0.983739837398374,
+      "mrr": 0.9528455284552846,
+      "random_baseline": {
+        "recall_at_k": 0.45454545454545453,
+        "mrr": 0.27453430407975865
+      },
+      "by_kind": {
+        "assumption": {
+          "queries": 22,
+          "recall@5": 0.9545454545454546,
+          "mrr": 0.9363636363636364
+        },
+        "claim": {
+          "queries": 42,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "dataset": {
+          "queries": 11,
+          "recall@5": 0.9090909090909091,
+          "mrr": 0.6454545454545454
+        },
+        "limitation": {
+          "queries": 13,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "method": {
+          "queries": 18,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "result": {
+          "queries": 17,
+          "recall@5": 1.0,
+          "mrr": 0.9705882352941176
+        }
+      }
+    },
+    "full_pool": {
+      "task": "unit -> source paper (live query embeddings)",
+      "queries": 123,
+      "candidates": 111,
+      "recall@1": 0.8861788617886179,
+      "recall@5": 0.9349593495934959,
+      "mrr": 0.9121141687749292,
+      "random_baseline": {
+        "recall_at_k": 0.04504504504504504,
+        "mrr": 0.04766886132660348
+      },
+      "by_kind": {
+        "assumption": {
+          "queries": 22,
+          "recall@5": 0.9545454545454546,
+          "mrr": 0.8982267732267732
+        },
+        "claim": {
+          "queries": 42,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "dataset": {
+          "queries": 11,
+          "recall@5": 0.45454545454545453,
+          "mrr": 0.505671552878238
+        },
+        "limitation": {
+          "queries": 13,
+          "recall@5": 1.0,
+          "mrr": 0.9615384615384616
+        },
+        "method": {
+          "queries": 18,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "result": {
+          "queries": 17,
+          "recall@5": 0.9411764705882353,
+          "mrr": 0.8450980392156863
+        }
+      }
+    }
+  },
+  {
+    "model": "voyage-4",
+    "extracted_pool": {
+      "task": "unit -> source paper (live query embeddings)",
+      "queries": 123,
+      "candidates": 11,
+      "recall@1": 0.9105691056910569,
+      "recall@5": 0.991869918699187,
+      "mrr": 0.9415537488708221,
+      "random_baseline": {
+        "recall_at_k": 0.45454545454545453,
+        "mrr": 0.27453430407975865
+      },
+      "by_kind": {
+        "assumption": {
+          "queries": 22,
+          "recall@5": 1.0,
+          "mrr": 0.9409090909090909
+        },
+        "claim": {
+          "queries": 42,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "dataset": {
+          "queries": 11,
+          "recall@5": 0.9090909090909091,
+          "mrr": 0.6767676767676768
+        },
+        "limitation": {
+          "queries": 13,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "method": {
+          "queries": 18,
+          "recall@5": 1.0,
+          "mrr": 0.9722222222222222
+        },
+        "result": {
+          "queries": 17,
+          "recall@5": 1.0,
+          "mrr": 0.892156862745098
+        }
+      }
+    },
+    "full_pool": {
+      "task": "unit -> source paper (live query embeddings)",
+      "queries": 123,
+      "candidates": 111,
+      "recall@1": 0.8699186991869918,
+      "recall@5": 0.9186991869918699,
+      "mrr": 0.8918274240782194,
+      "random_baseline": {
+        "recall_at_k": 0.04504504504504504,
+        "mrr": 0.04766886132660348
+      },
+      "by_kind": {
+        "assumption": {
+          "queries": 22,
+          "recall@5": 0.9545454545454546,
+          "mrr": 0.8962662337662337
+        },
+        "claim": {
+          "queries": 42,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "dataset": {
+          "queries": 11,
+          "recall@5": 0.45454545454545453,
+          "mrr": 0.49201794582229363
+        },
+        "limitation": {
+          "queries": 13,
+          "recall@5": 1.0,
+          "mrr": 0.9487179487179488
+        },
+        "method": {
+          "queries": 18,
+          "recall@5": 1.0,
+          "mrr": 0.9629629629629629
+        },
+        "result": {
+          "queries": 17,
+          "recall@5": 0.8235294117647058,
+          "mrr": 0.7587089381207028
+        }
+      }
+    }
+  }
+]
