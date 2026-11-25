@@ -71,14 +71,35 @@ class BaseAgent:
         except FileNotFoundError:
             logger.warning("knowledge graph not built; run `python -m layer3-2 build`")
             return []
+        g = store.g
         out = []
-        for nid, data in store.g.nodes(data=True):
+        for nid, data in g.nodes(data=True):
             if data.get("type") == node_type:
+                papers = self._source_papers(g, nid)
                 out.append({"id": nid, "label": data.get("label"),
-                            "paper_id": data.get("paper_id"),
+                            # Method/Dataset nodes carry no paper_id of their
+                            # own: take it from the Paper that introduces
+                            # (else uses) them, so downstream checks can tell
+                            # whether two methods come from the same paper
+                            "paper_id": data.get("paper_id") or (papers[0] if papers else None),
+                            "papers": papers,
                             "description": data.get("description"),
                             "role": data.get("role")})
         return out
+
+    @staticmethod
+    def _source_papers(g, node_id: str) -> List[str]:
+        """paper_ids of the Papers linked to a node by INTRODUCES (first) or USES."""
+        introduces, uses = [], []
+        for src, _, edata in g.in_edges(node_id, data=True):
+            pid = g.nodes[src].get("paper_id")
+            if not pid:
+                continue
+            if edata.get("type") == "INTRODUCES":
+                introduces.append(pid)
+            elif edata.get("type") == "USES":
+                uses.append(pid)
+        return list(dict.fromkeys(introduces + uses))
 
     def safe_kg(self, call: Callable, default):
         """Run a graph query, tolerating a missing/unbuilt graph."""

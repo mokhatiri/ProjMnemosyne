@@ -80,6 +80,12 @@ class SynergyAgent(BaseAgent):
         findings: List[Finding] = []
         for s in self.reasoner.find_synergies(tp, methods):
             a, b = s.get("method_a", {}), s.get("method_b", {})
+            # two methods from one paper are usually a method and its own
+            # component or baseline, not a synergy worth proposing
+            if a.get("paper_id") and a.get("paper_id") == b.get("paper_id"):
+                logger.info("synergy: skipping same-paper pair %r + %r",
+                            a.get("name"), b.get("name"))
+                continue
             prov = [f"method:{a.get('name')}", f"method:{b.get('name')}"]
             summary = (f"Potential synergy: combine '{a.get('name')}' with "
                        f"'{b.get('name')}'")

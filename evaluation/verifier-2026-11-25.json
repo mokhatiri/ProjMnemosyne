@@ -1,0 +1,295 @@
+[
+  {
+    "id": "synergy:acfef08bdd",
+    "kind": "synergy",
+    "passed": true,
+    "errors": [],
+    "warnings": [
+      "method_a 'Chain of Thought Prompting' carries no paper_id (resolved by name)",
+      "method_b 'Rubric-Conditioned Self-Distillation' carries no paper_id (resolved by name)"
+    ]
+  },
+  {
+    "id": "synergy:7253879395",
+    "kind": "synergy",
+    "passed": false,
+    "errors": [
+      "both methods come from the same paper (arxiv:2606.11189v1): one is part of, or built on, the other"
+    ],
+    "warnings": [
+      "method_a 'Q-target framework' carries no paper_id (resolved by name)",
+      "method_b 'TARGET-SFT' carries no paper_id (resolved by name)"
+    ]
+  },
+  {
+    "id": "synergy:ef9709551d",
+    "kind": "synergy",
+    "passed": false,
+    "errors": [
+      "both methods come from the same paper (arxiv:2606.11189v1): one is part of, or built on, the other"
+    ],
+    "warnings": [
+      "method_a 'Standard SFT' carries no paper_id (resolved by name)",
+      "method_b 'Knowledge Distillation' carries no paper_id (resolved by name)"
+    ]
+  },
+  {
+    "id": "synergy:cc614360f6",
+    "kind": "synergy",
+    "passed": true,
+    "errors": [],
+    "warnings": [
+      "method_a 'Uncertainty-Balanced Preference Planning (UBP2)' carries no paper_id (resolved by name)",
+      "method_b 'Data Intelligence Agents (DIA)' carries no paper_id (resolved by name)"
+    ]
+  },
+  {
+    "id": "synergy:298f50ea94",
+    "kind": "synergy",
+    "passed": false,
+    "errors": [
+      "both methods come from the same paper (arxiv:2606.19325v1): one is part of, or built on, the other"
+    ],
+    "warnings": [
+      "method_a 'ScenA' carries no paper_id (resolved by name)",
+      "method_b 'high-noise-biased timestep distribution' carries no paper_id (resolved by name)"
+    ]
+  },
+  {
+    "id": "synergy:6b80277dda",
+    "kind": "synergy",
+    "passed": false,
+    "errors": [
+      "both methods come from the same paper (arxiv:2606.19319v1): one is part of, or built on, the other"
+    ],
+    "warnings": [
+      "method_a 'Data Intelligence Agents (DIA)' carries no paper_id (resolved by name)",
+      "method_b 'Query Generator' carries no paper_id (resolved by name)"
+    ]
+  },
+  {
+    "id": "gap:5fbc8b3c30",
+    "kind": "hypothesis",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "gap:e8a80782df",
+    "kind": "hypothesis",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "gap:5e09cf386e",
+    "kind": "hypothesis",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "evidence:6dacdec842",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "evidence:7e08226d4a",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "evidence:f4de6a1c80",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "evidence:c0db93309d",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "evidence:e2a5000f07",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "evidence:df17b329b0",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "evidence:0074287aca",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "evidence:6436f532a0",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "evidence:d2bb561848",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "evidence:aff27ecb80",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "evidence:c25cf93c55",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "evidence:d255c86e4d",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "contradiction:bdcdcec8bf",
+    "kind": "contradiction",
+    "passed": false,
+    "errors": [
+      "both claims come from the same paper (arxiv:2606.20560v1): not a cross-paper contradiction"
+    ],
+    "warnings": []
+  },
+  {
+    "id": "evidence:47c5119390",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "evidence:150d894286",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "contradiction:8e2da5c539",
+    "kind": "contradiction",
+    "passed": true,
+    "errors": [],
+    "warnings": [
+      "produced by the offline stub, not the LLM reasoner"
+    ]
+  },
+  {
+    "id": "evidence:d55f07033b",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": [
+      "produced by the offline stub, not the LLM reasoner"
+    ]
+  },
+  {
+    "id": "contradiction:d507b4b427",
+    "kind": "contradiction",
+    "passed": true,
+    "errors": [],
+    "warnings": [
+      "produced by the offline stub, not the LLM reasoner"
+    ]
+  },
+  {
+    "id": "evidence:6e40b72090",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": [
+      "produced by the offline stub, not the LLM reasoner"
+    ]
+  },
+  {
+    "id": "contradiction:a4f390c533",
+    "kind": "contradiction",
+    "passed": false,
+    "errors": [
+      "both claims come from the same paper (arxiv:2606.20560v1): not a cross-paper contradiction"
+    ],
+    "warnings": []
+  },
+  {
+    "id": "evidence:8d5225c09f",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": [
+      "no claim cited on either side"
+    ]
+  },
+  {
+    "id": "evidence:0c55f0ae7b",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": [
+      "verdict 'supported' rests on fewer than 2 claims"
+    ]
+  },
+  {
+    "id": "contradiction:ea006eb789",
+    "kind": "contradiction",
+    "passed": false,
+    "errors": [
+      "both claims come from the same paper (arxiv:2606.20544v1): not a cross-paper contradiction"
+    ],
+    "warnings": []
+  },
+  {
+    "id": "evidence:c881939013",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  {
+    "id": "evidence:849eeeb3a3",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": [
+      "no claim cited on either side"
+    ]
+  },
+  {
+    "id": "evidence:e65e8ee452",
+    "kind": "evidence",
+    "passed": true,
+    "errors": [],
+    "warnings": [
+      "verdict 'supported' rests on fewer than 2 claims"
+    ]
+  }
+]

@@ -28,6 +28,7 @@ Each layer is a self-contained Python package. The folder number matches the
 | [`frontend/`](frontend/) | — | Web console | Vue 3 + Vite single-page app (overview dashboard, search/graph/agents/insights views, live analyst control) served by a stdlib HTTP server over Layers 4–6 + the analyst | (serves HTTP) |
 | [`pipeline/`](pipeline/) | — | Orchestrator | Runs every layer end-to-end, then launches the frontend | (drives the above) |
 | [`analyst/`](analyst/) | — | Autonomous analyst | Self-directed loop: picks targets, runs the agents, banks ranked insights | `storage/insights.jsonl` |
+| [`verifier/`](verifier/) | — | Insight verification | Deterministic checks that an insight stands on the corpus; the analyst's gate before banking | `storage/rejected_insights.jsonl` |
 | [`evaluation/`](evaluation/) | — | Retrieval evaluation | Offline recall@k / MRR of the vector index (unit → source paper) | (prints a report) |
 
 Data flows **down** the table; every layer reads the append-only JSONL the
@@ -242,6 +243,53 @@ Findings:
 Rate limits: without a payment method Voyage allows 3 requests / 10K tokens per
 minute; `evaluation.live` paces its requests and saves after every batch, so
 an interrupted run resumes where it stopped.
+
+### Insight quality: the verifier
+
+The agents let an LLM judge; until Nov 2026 nothing checked a finding before
+the analyst banked it. `verifier/` checks every insight against the corpus it
+cites, without an LLM:
+
+- **traceable**: every cited chunk and paper exists, and each quoted statement
+  matches the stored text;
+- **contradiction**: two different claims from two different papers, not a
+  mirrored duplicate of one already banked;
+- **synergy**: both methods exist in the corpus and come from different papers
+  (same-paper pairs are usually a method and its own component or baseline);
+- **evidence**: the supporting/contradicting counts in the summary match the
+  cited lists, and a "supported" verdict has more support than contradiction;
+- **hypothesis**: every `grounded_in` paper exists and contains the entity it
+  is cited for.
+
+Stub (offline) output is flagged as a warning. `python -m verifier --details`
+reports on `storage/insights.jsonl`. On the June 2026 bank:
+
+| Kind | Banked | Pass | LLM-made and pass |
+|------|--------|------|-------------------|
+| evidence | 21 | 21 | 19 |
+| synergy | 6 | 2 | 2 |
+| hypothesis | 3 | 3 | 3 |
+| contradiction | 5 | 2 | 0 |
+| **all** | **35** | **28 (80%)** | **24 of 31 (77%)** |
+
+Every real contradiction paired two claims from the same paper (one pair was
+banked twice, in both orders), and 4 of 6 synergies joined methods from one
+paper. Three changes follow from that:
+
+1. **Gate in the analyst**: each new finding is verified before banking;
+   failures go to `storage/rejected_insights.jsonl` with their reasons and are
+   not retried (`ANALYST_VERIFY=0` turns the gate off).
+2. **Contradiction candidates span papers**: `detect_contradictions` now
+   over-fetches and interleaves claims by paper before asking the LLM, and
+   drops same-paper pairs it returns.
+3. **Methods know their paper**: graph Method nodes now resolve their paper
+   through INTRODUCES/USES edges (18 of 18, was 0), and the synergy agent
+   skips same-paper pairs.
+
+Limit: the verifier proves an insight is traceable and well-formed, not that
+the judgement is wise. One banked hypothesis applies a diffusion timestep trick
+to chain-of-thought prompting; it passes because every entity it cites exists.
+Judging that needs a reviewer, human or LLM.
 
 Tests: `python -m unittest discover tests`.
 
