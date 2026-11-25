@@ -30,17 +30,35 @@ _l31_config = importlib.import_module("layer3-1.config")
 _l31_store = importlib.import_module("layer3-1.store")
 
 
-def rank_source_papers(store) -> List[dict]:
-    """One record per unit chunk: its kind, paper and the rank of its paper."""
+def unit_rows(store) -> List[int]:
+    """Row numbers of the unit chunks whose paper has an abstract in the store."""
+    papers = {c.paper_id for c in store.chunks if c.kind == "abstract"}
+    return [i for i, c in enumerate(store.chunks)
+            if c.kind != "abstract" and c.paper_id in papers]
+
+
+def rank_source_papers(store, query_vectors=None,
+                       pool: Optional[set] = None) -> List[dict]:
+    """One record per unit chunk: its kind, paper and the rank of its paper.
+
+    query_vectors: one vector per row of unit_rows(store), e.g. live
+    input_type="query" embeddings; default = the units' stored vectors.
+    pool: paper_ids allowed as candidates (default: every indexed abstract).
+    """
     abstracts = [c for c in store.chunks if c.kind == "abstract"]
-    n_papers = len(abstracts)
-    indexed_papers = {c.paper_id for c in abstracts}
+    all_papers = {c.paper_id for c in abstracts}
+    pool = set(pool) if pool is not None else all_papers
+    excluded = all_papers - pool
+    n_papers = len(pool)
+    rows = unit_rows(store)
     records = []
-    for i, chunk in enumerate(store.chunks):
-        if chunk.kind == "abstract" or chunk.paper_id not in indexed_papers:
+    for qi, i in enumerate(rows):
+        chunk = store.chunks[i]
+        if chunk.paper_id not in pool:
             continue
-        hits = store.search(store.vectors[i], k=n_papers,
-                            filter={"kind": "abstract"})
+        qvec = store.vectors[i] if query_vectors is None else query_vectors[qi]
+        hits = store.search(qvec, k=n_papers, filter={"kind": "abstract"},
+                            exclude_paper_ids=excluded)
         rank: Optional[int] = None
         for pos, hit in enumerate(hits, start=1):
             if hit.chunk.paper_id == chunk.paper_id:

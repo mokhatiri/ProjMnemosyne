@@ -75,6 +75,20 @@ class EndToEndTest(unittest.TestCase):
         self.assertEqual(recs["p0#method:0"], 2)
         self.assertNotIn("p0#abstract", recs)  # abstracts are candidates, not queries
 
+    def test_pool_and_query_vectors(self):
+        # pool without p2: p0's misleading method now finds p0 first among {p0, p1}
+        recs = {r["chunk_id"]: r["rank"]
+                for r in rank_source_papers(self.store, pool={"p0", "p1"})}
+        self.assertEqual(recs["p0#method:0"], 1)
+        self.assertNotIn("p2#claim:0", recs)  # queries from outside the pool are skipped
+        # explicit query vectors replace the stored ones (one per unit row)
+        from evaluation.retrieval import unit_rows
+        qv = np.tile(np.array([0, 1, 0], dtype=np.float32), (len(unit_rows(self.store)), 1))
+        recs = {r["chunk_id"]: r["rank"]
+                for r in rank_source_papers(self.store, query_vectors=qv)}
+        self.assertEqual(recs["p1#claim:0"], 1)
+        self.assertNotEqual(recs["p0#claim:0"], 1)
+
     def test_summary_and_run(self):
         res = summarise(rank_source_papers(self.store), n_papers=3, k=1)
         self.assertEqual(res["queries"], 4)

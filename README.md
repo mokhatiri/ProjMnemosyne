@@ -201,10 +201,49 @@ dataset units are the weak spot (recall@5 = 0.727, MRR = 0.583) because a
 dataset line such as "NuminaMath-CoT: training and evaluation for mathematical
 reasoning" fits several papers equally well.
 
-Read it with its limits: only 11 candidate papers (a small, easy pool), and
-queries reuse document-side embeddings, whereas live `search()` embeds queries
-with `input_type="query"`. Re-run after indexing more papers to see how it
-holds up on a larger pool. Tests: `python -m unittest discover tests`.
+This offline run has two limits: only 11 candidate papers (a small, easy
+pool), and queries reuse document-side embeddings. The live run below removes
+both.
+
+### Live run: real query embeddings, larger pool, current models
+
+`python -m evaluation.live` rebuilds the index with any Voyage model in its own
+folder (`storage/eval/<model>/`, git-ignored; the committed store is never
+touched), using Layer 3-1's own chunking. It embeds each unit as a real search
+query (`input_type="query"`, the path `search()` takes), and can add recent
+arXiv papers, fetched live through Layer 1's `ArxivFetcher`, as distractors
+in the candidate pool:
+
+```bash
+python -m evaluation.live --model voyage-3 --model voyage-4 --distractors 100 --json storage/eval/results.json
+```
+
+Results, 25 Nov 2026 (123 unit queries; pool = 11 corpus papers + 100 arXiv
+cs.CL/cs.LG/cs.AI papers submitted 24 Nov 2026):
+
+| Model | Pool | recall@1 | recall@5 | MRR |
+|-------|------|----------|----------|-----|
+| voyage-3 | 11 papers | 0.927 | 0.984 | 0.953 |
+| voyage-4 | 11 papers | 0.911 | 0.992 | 0.942 |
+| voyage-3 | 111 papers | 0.886 | 0.935 | 0.912 |
+| voyage-4 | 111 papers | 0.870 | 0.919 | 0.892 |
+| random | 111 papers | 0.009 | 0.045 | 0.048 |
+
+Findings:
+- Ranking stays strong when the pool grows tenfold: MRR drops from 0.95 to
+  0.91 with voyage-3.
+- voyage-4 (Jan 2026) does not beat voyage-3 on this task; the gap is 2 of
+  123 queries, i.e. a tie. There is no reason to re-index for quality.
+- Dataset units are the weak spot (recall@5 0.45 on the 111-paper pool):
+  a dataset name with a one-line purpose fits many recent LLM papers. Adding
+  the paper title, or the sentence that uses the dataset, to the dataset chunk
+  text is the obvious next fix.
+
+Rate limits: without a payment method Voyage allows 3 requests / 10K tokens per
+minute; `evaluation.live` paces its requests and saves after every batch, so
+an interrupted run resumes where it stopped.
+
+Tests: `python -m unittest discover tests`.
 
 ## Connecting Layer 4 to an MCP client
 
